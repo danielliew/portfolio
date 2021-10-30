@@ -1,0 +1,66 @@
+/* whole page stuff */
+
+.container {
+  display: grid;
+}
+
+.sections-container {
+  padding: 0px 20vw;
+}
+
+/* side list stuff */
+
+.side {
+  height: 100vh;
+  position: fixed;
+  display: flex;
+  align-items: flex-end;
+}
+
+.side-list {
+  width: 10vw;
+  display: flex;
+  flex-direction: column;
+  -webkit-box-align: center;
+  align-items: center;
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+}
+
+.side-list > li {
+  margin-bottom: 2vh;
+}
+
+.side-list::after {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 12vh;
+  margin: 0px auto;
+  background-color: #000;
+}
+
+/* top section stuff */
+
+.top-section {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.top-pretext,
+.top-posttext {
+  margin-left: 4px;
+}
+
+.top-title {
+  font-size: 80px;
+  margin: 20px 0px;
+}
+
+/* content section stuff */
+
+.content-section {
+  padding: 100px 0px;
+}
