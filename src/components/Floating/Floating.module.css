@@ -1,0 +1,22 @@
+.floatingContainer {
+  display: flex;
+  max-width: 60vw;
+  overflow: scroll visible;
+}
+
+.floatingContainer:hover {
+  animation-play-state: paused;
+}
+
+.floatingItem {
+  padding: 16px 16px 0px 16px;
+  margin: 15px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+    rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+  transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+  border-radius: 15px;
+}
+
+.floatingItem:hover {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+}

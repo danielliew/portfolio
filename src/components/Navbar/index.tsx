@@ -1,4 +1,5 @@
 import React from "react";
+import { contentSections } from "../content";
 import styles from "./Navbar.module.css";
 
 const Navbar: React.FC = () => {
@@ -10,11 +11,9 @@ const Navbar: React.FC = () => {
       <div />
       <div className={styles["nav-items-container"]}>
         <ul className={styles["nav-items"]}>
-          <li>About</li>
-          <li>Experience</li>
-          <li>Skills</li>
-          <li>Projects</li>
-          <li>Contact</li>
+          {contentSections.map(({ navText }, i) => (
+            <li key={i}>{navText}</li>
+          ))}
         </ul>
       </div>
     </nav>

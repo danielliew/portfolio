@@ -4,7 +4,7 @@
   backdrop-filter: blur(15px);
   background-color: hsla(0, 0%, 100%, 0.8);
   display: grid;
-  grid-template-columns: 10vw 30vw auto;
+  grid-template-columns: 10vw 30vw 60vw;
 }
 
 /* logo side */
@@ -21,7 +21,7 @@
 .nav-items-container {
   display: flex;
   align-items: center;
-  /* justify-content: center; */
+  justify-content: flex-end;
 }
 
 .nav-items {
