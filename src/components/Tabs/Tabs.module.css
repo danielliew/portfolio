@@ -1,3 +1,8 @@
+.tabsContainer {
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
 .button {
   background-color: #fff;
   border: none;
@@ -20,5 +25,18 @@
 }
 
 .bactive {
-  border-bottom-color: black !important;
+  border-left-color: black !important;
+  border-right-color: black !important;
+}
+
+small {
+  display: block;
+  margin-top: 10px;
+}
+
+h4 {
+  margin-bottom: 5px;
+}
+h6 {
+  margin-top: 5px;
 }

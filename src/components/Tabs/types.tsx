@@ -6,7 +6,10 @@ export interface TabProps {
 
 interface Tabs {
   company: string;
-  jobTitle: string;
-  duration: string;
-  content: React.ReactNode;
+  location: string;
+  positions: {
+    jobTitle: string;
+    duration: string;
+    content: React.ReactNode;
+  }[];
 }

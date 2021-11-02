@@ -6,7 +6,7 @@ const Tabs: React.FC<TabProps> = ({ tabs }) => {
   const [current, setCurrent] = useState(0);
   const company = tabs[current];
   return (
-    <div>
+    <div className={styles.tabsContainer}>
       <div>
         {tabs.map((item, i) => (
           <button
@@ -15,15 +15,19 @@ const Tabs: React.FC<TabProps> = ({ tabs }) => {
             onClick={() => setCurrent(i)}
           >
             {item.company}
+            {current === i && <small>{company.location}</small>}
           </button>
         ))}
       </div>
-
-      <h3>
-        {company.jobTitle} @ {company.company}
-      </h3>
-      <p>{company.duration}</p>
-      {company.content}
+      <div>
+        {company.positions.map((item, i) => (
+          <div key={i} className={styles["position-timeline"]}>
+            <h4>{item.jobTitle}</h4>
+            <h6>{item.duration}</h6>
+            {item.content}
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
