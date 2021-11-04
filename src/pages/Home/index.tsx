@@ -30,13 +30,17 @@ const Home: React.FC = () => {
             <p className={styles["top-pretext"]}>Hi, my name is</p>
             <h1 className={styles["top-title"]}>Daniel Liew</h1>
             <p className={styles["top-posttext"]}>
-              I build, design, and engineer digital experiences
+              Problem solving is a lifestyle.
             </p>
           </div>
         </section>
 
         {contentSections.map((item, i) => (
-          <section key={i} className={styles["content-section"]}>
+          <section
+            id={`section-${item.navText}`}
+            key={i}
+            className={styles["content-section"]}
+          >
             <div>
               <Heading num={`0${i + 1}.`} text={item.text} />
               {item.content}
@@ -52,7 +56,7 @@ const Home: React.FC = () => {
           )}
           <div className={styles["footer-container"]}>
             <p>Designed and built by Daniel Liew</p>
-            <p>Last Updated: Nov 2021</p>
+            <p>Nov 2021</p>
           </div>
         </section>
       </div>

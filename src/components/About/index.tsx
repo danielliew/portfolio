@@ -9,6 +9,10 @@ const hrefs = {
 };
 
 const About: React.FC = () => {
+  const aProps = {
+    className: styles.a,
+    target: "_blank",
+  };
   return (
     <div>
       <p>
@@ -21,24 +25,25 @@ const About: React.FC = () => {
         taken a keen interest towards problem solving and creative thinking.
         From building elegant and powerful frontend designs to complex and
         functional backend APIs, I want to use programming as a creative medium
-        for bringing purposeful ideas to fruition.
+        for bringing purposeful ideas to fruition. I like to build, design, and
+        engineer digital experiences.
         <br />
         <br />
         I've had the priveledge of interning at{" "}
-        <a href={hrefs.ijm} className={styles.a}>
+        <a href={hrefs.ijm} {...aProps}>
           one of Malaysia's leading conglomerates
         </a>
         ,{" "}
-        <a href={hrefs.ytl} className={styles.a}>
+        <a href={hrefs.ytl} {...aProps}>
           a multinational cement manufacturer
         </a>
         , and{" "}
-        <a href={hrefs.ictrc} className={styles.a}>
+        <a href={hrefs.ictrc} {...aProps}>
           an IT strategy and deployment consultantcy firm
         </a>
         . Nowadays, I'm building user-friendly, inclusive, and accessible
         digital experiences at{" "}
-        <a href={hrefs.supersharkz} className={styles.a}>
+        <a href={hrefs.supersharkz} {...aProps}>
           one of Malaysia's largest swim schools
         </a>
         .

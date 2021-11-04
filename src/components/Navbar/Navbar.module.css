@@ -45,6 +45,16 @@
   margin: 10px 3vw;
 }
 
+.navItem {
+  cursor: pointer;
+  opacity: 1;
+  transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.navItem:hover {
+  opacity: 0.6;
+}
+
 /* hamburger */
 
 .hamburger {

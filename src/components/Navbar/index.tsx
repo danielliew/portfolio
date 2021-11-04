@@ -1,15 +1,21 @@
 import React, { useState } from "react";
 import { useSpring, animated, useSpringRef, useChain } from "react-spring";
 import useResponsive from "../../hooks/useResponsive";
-import { SideList } from "../../pages/Home";
 import { contentSections } from "../content";
 import styles from "./Navbar.module.css";
 
 const NavItems: React.FC = () => {
+  const onClick = (navText: string) => {
+    const section = document.querySelector(`#section-${navText}`);
+    if (section) section.scrollIntoView();
+  };
+
   return (
     <>
       {contentSections.map(({ navText }, i) => (
-        <li key={i}>{navText}</li>
+        <li className={styles.navItem} key={i} onClick={() => onClick(navText)}>
+          {navText}
+        </li>
       ))}
     </>
   );
@@ -32,7 +38,7 @@ const Navbar: React.FC = () => {
 
   const menuSpringRef = useSpringRef();
   const propsMenu = useSpring({
-    transform: menu ? "translateX(0vw)" : "translateX(100vw)",
+    transform: menu ? "translateX(0%)" : "translateX(100%)",
     ref: menuSpringRef,
   });
 
@@ -97,9 +103,6 @@ const Navbar: React.FC = () => {
           <ul className={styles["nav-items-menu"]}>
             <NavItems />
           </ul>
-        </div>
-        <div className={styles["centered"]}>
-          <SideList />
         </div>
       </animated.div>
     </nav>
