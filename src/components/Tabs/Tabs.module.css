@@ -3,6 +3,11 @@
   grid-template-columns: auto auto;
 }
 
+.tabsContainer-responsive {
+  display: grid;
+  grid-template-columns: auto;
+}
+
 .button {
   background-color: #fff;
   border: none;

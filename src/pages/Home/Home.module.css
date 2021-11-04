@@ -64,3 +64,14 @@
 .content-section {
   padding: 100px 0px;
 }
+
+/* bottom */
+
+.bottom-container {
+  display: flex;
+  justify-content: center;
+}
+
+.footer-container {
+  text-align: center;
+}

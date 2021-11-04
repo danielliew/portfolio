@@ -1,6 +1,13 @@
 import React from "react";
 import styles from "./About.module.css";
 
+const hrefs = {
+  ijm: "https://www.ijm.com/",
+  ytl: "https://ytl.com/",
+  ictrc: "https://www.ictrc.com.my/",
+  supersharkz: "https://supersharkz.com/",
+};
+
 const About: React.FC = () => {
   return (
     <div>
@@ -18,16 +25,23 @@ const About: React.FC = () => {
         <br />
         <br />
         I've had the priveledge of interning at{" "}
-        <a className={styles.a}>
+        <a href={hrefs.ijm} className={styles.a}>
           one of Malaysia's leading conglomerates
-        </a>, <a className={styles.a}>a multinational cement manufacturer</a>,
-        and{" "}
-        <a className={styles.a}>
+        </a>
+        ,{" "}
+        <a href={hrefs.ytl} className={styles.a}>
+          a multinational cement manufacturer
+        </a>
+        , and{" "}
+        <a href={hrefs.ictrc} className={styles.a}>
           an IT strategy and deployment consultantcy firm
         </a>
         . Nowadays, I'm building user-friendly, inclusive, and accessible
         digital experiences at{" "}
-        <a className={styles.a}>one of Malaysia's largest swim schools</a>.
+        <a href={hrefs.supersharkz} className={styles.a}>
+          one of Malaysia's largest swim schools
+        </a>
+        .
       </p>
     </div>
   );

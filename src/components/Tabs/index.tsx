@@ -1,12 +1,14 @@
 import React, { useState } from "react";
+import useResponsive from "../../hooks/useResponsive";
 import styles from "./Tabs.module.css";
 import { TabProps } from "./types";
 
 const Tabs: React.FC<TabProps> = ({ tabs }) => {
   const [current, setCurrent] = useState(0);
   const company = tabs[current];
+  const isLg = useResponsive();
   return (
-    <div className={styles.tabsContainer}>
+    <div className={`${styles.tabsContainer}${!isLg ? "-responsive" : ""}`}>
       <div>
         {tabs.map((item, i) => (
           <button

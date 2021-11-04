@@ -1,18 +1,29 @@
 import React from "react";
 import { contentSections } from "../../components/content";
 import Heading from "../../components/Heading";
+import useResponsive from "../../hooks/useResponsive";
 import styles from "./Home.module.css";
 
+export const SideList: React.FC = () => {
+  return (
+    <ul className={`${styles["side-list"]}`}>
+      <li>linkedin</li>
+      <li>github</li>
+      <li>email</li>
+    </ul>
+  );
+};
+
 const Home: React.FC = () => {
+  const isLg = useResponsive();
+
   return (
     <div className={styles["container"]}>
-      <div className={styles["side"]}>
-        <ul className={styles["side-list"]}>
-          <li>linkedin</li>
-          <li>github</li>
-          <li>email</li>
-        </ul>
-      </div>
+      {isLg && (
+        <div className={styles["side"]}>
+          <SideList />
+        </div>
+      )}
       <div className={styles["sections-container"]}>
         <section className={styles["top-section"]}>
           <div>
@@ -32,6 +43,18 @@ const Home: React.FC = () => {
             </div>
           </section>
         ))}
+
+        <section className={styles["content-section"]}>
+          {!isLg && (
+            <div className={styles["bottom-container"]}>
+              <SideList />
+            </div>
+          )}
+          <div className={styles["footer-container"]}>
+            <p>Designed and built by Daniel Liew</p>
+            <p>Last Updated: Nov 2021</p>
+          </div>
+        </section>
       </div>
     </div>
   );

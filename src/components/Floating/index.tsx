@@ -7,7 +7,7 @@ const Floating: React.FC<FloatingProps> = ({ content }) => {
     <div className={styles.floatingContainer}>
       {content.map((item, i) => (
         <div key={i} className={styles.floatingItem}>
-          {item.logo}
+          <div>{item.logo}</div>
           <p>{item.text}</p>
         </div>
       ))}
