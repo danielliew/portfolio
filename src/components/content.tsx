@@ -1,6 +1,22 @@
 import About from "./About";
 import Floating from "./Floating";
+import Project from "./Project";
 import Tabs from "./Tabs";
+
+import web1 from "./images/supersharkz/web1.png";
+import web2 from "./images/supersharkz/web2.png";
+import web3 from "./images/supersharkz/web3.png";
+import web4 from "./images/supersharkz/web4.png";
+
+import app1 from "./images/supersharkz/app1.png";
+import app2 from "./images/supersharkz/app2.png";
+import app3 from "./images/supersharkz/app3.png";
+import app4 from "./images/supersharkz/app4.png";
+
+import ijmWeb1 from "./images/ijm/web1.png";
+import ijmApp1 from "./images/ijm/app1.jpg";
+import pokerApp1 from "./images/poker/app1.png";
+import devopsGh1 from "./images/ytl/gh1.png";
 
 const experienceTabContent = [
   {
@@ -228,6 +244,53 @@ const skillsFloatingContent = [
   },
 ];
 
+const projectsContent = [
+  {
+    title: "Supersharkz.com",
+    images: [web1, web2, web3, web4],
+    text: "A professional website, swim school admin portal, instructor portal, and parent portal - all in one.",
+    tags: ["React", "Express", "MySQL", "Google App Engine"],
+  },
+  {
+    title: "Supersharkz",
+    images: [app1, app2, app3, app4],
+    mobile: true,
+    text: "Parents can manage their account, register for classes, and track their students progress, whilst instructors can manage and monitor their active classes and schedules.",
+    tags: ["React Native", "Expo", "Express", "Socket.io"],
+  },
+  {
+    title: "IJM Land Calendar Booking",
+    images: [ijmWeb1],
+    text: "An online booking system allowing agencies to book time slots for visitor show unit tours to minimize social gathering during the COVID-19 pandemic",
+    tags: ["React", "Google Sheets", "Google Calendar", "Express", "AppSheet"],
+  },
+  {
+    title: "IJM COVID-19 Monitoring",
+    images: [ijmApp1],
+    mobile: true,
+    text: "A user-friendly way for security guards to monitor visitors' going in and out of IJM buildings and their COVID-19 health screening information",
+    tags: [
+      "React Native",
+      "Google Sheets",
+      "Google Forms",
+      "Express",
+      "AppSheet",
+    ],
+  },
+  {
+    title: "Poker AI",
+    images: [pokerApp1],
+    text: "Play 1v1 poker against an AI bot that has played over 1,000,000 random poker games",
+    tags: ["Python", "Kivy", "TensorFlow", "Machine Learning"],
+  },
+  {
+    title: "DevOps Exploration",
+    images: [devopsGh1],
+    text: "A research repository containing several mini-projects demonstrating Agile methodology and Devops best practices",
+    tags: ["git", "Docker", "Kubernetes", "Github Actions", "Agile"],
+  },
+];
+
 export const contentSections = [
   {
     navText: "About",
@@ -263,7 +326,14 @@ export const contentSections = [
   },
   {
     navText: "Projects",
-    text: "Projects",
+    text: "Some Things I've Built",
+    content: (
+      <div>
+        {projectsContent.map((project, i) => (
+          <Project project={project} key={i} left={i % 2 !== 0} />
+        ))}
+      </div>
+    ),
   },
   {
     navText: "Contact",

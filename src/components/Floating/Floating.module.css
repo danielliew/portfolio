@@ -10,6 +10,7 @@
     rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
   transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
   border-radius: 15px;
+  cursor: pointer;
 }
 
 .floatingItem > div {

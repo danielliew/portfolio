@@ -30,8 +30,7 @@
 }
 
 .bactive {
-  border-left-color: black !important;
-  border-right-color: black !important;
+  border-color: black !important;
 }
 
 small {

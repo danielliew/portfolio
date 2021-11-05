@@ -1,0 +1,137 @@
+:root {
+  --content-z: 3;
+  --image-z: 2;
+  --radius: 20px;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  margin: 50px 0px;
+}
+
+.content,
+.imgContainer {
+  grid-row: 1 / 2;
+}
+
+.content-responsive,
+.imgContainer-responsive {
+  grid-row: 1 / 2;
+}
+
+/* content */
+
+.content {
+  grid-column: 7 / -1;
+  text-align: right;
+  z-index: var(--content-z);
+}
+
+.content-left {
+  grid-column: 1 / 8 !important;
+  text-align: left !important;
+}
+
+.content-responsive {
+  grid-column: 1 / 13;
+  z-index: var(--content-z);
+  background-color: rgba(0, 0, 0, 0.639);
+  backdrop-filter: blur(3px);
+  padding: 25px 30px;
+  border-radius: var(--radius);
+  color: white;
+}
+
+.projectText {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  background-color: white;
+  padding: 25px;
+  color: black;
+}
+
+.tags {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.tags-left {
+  justify-content: flex-start !important;
+}
+
+.tags > small {
+  margin: 5px;
+}
+
+.content-responsive > .tags > small {
+  margin: 0px 10px 0px 0px !important;
+}
+
+/* image */
+
+.imgContainer {
+  grid-column: 1 / 8;
+  z-index: var(--image-z);
+}
+
+.imgContainer-left {
+  grid-column: 7 / -1 !important;
+}
+
+.imgContainer-responsive {
+  grid-column: 1 / 13;
+  z-index: var(--image-z);
+}
+
+.imgWrapper {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  width: 100%;
+  max-width: 100%;
+  vertical-align: middle;
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius);
+  max-height: 600px;
+}
+
+.imgWrapper1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.img {
+  min-height: 100%;
+  min-width: 100%;
+}
+
+.mobile {
+  min-width: unset !important;
+}
+
+.img-responsive {
+  flex: 1;
+  max-height: 350px;
+}
+
+/* img buttons */
+
+.buttonContainer {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.buttonContainer-left {
+  justify-content: flex-end;
+}
+
+button {
+  background-color: white;
+  border: none;
+  cursor: pointer;
+}

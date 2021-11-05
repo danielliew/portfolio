@@ -5,6 +5,7 @@
   background-color: hsla(0, 0%, 100%, 0.8);
   display: grid;
   grid-template-columns: 10vw 30vw 60vw;
+  z-index: 10;
 }
 
 /* logo side */
