@@ -7,7 +7,7 @@
 .container {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  margin: 50px 0px;
+  margin: 80px 0px;
 }
 
 .content,
@@ -64,6 +64,19 @@
   color: white;
 }
 
+.a > img {
+  height: 2.5vh;
+  min-height: 20px;
+}
+
+.openIcon {
+  margin: 10px 0px 0px 0px !important;
+}
+
+.openLightIcon {
+  margin-top: 20px !important;
+}
+
 .projectText {
   box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
     rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
@@ -89,6 +102,33 @@
 
 .content-responsive > .tags > small {
   margin: 0px 10px 0px 0px !important;
+}
+
+/* img buttons */
+
+.buttonContainer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.buttonContainer-left {
+  justify-content: flex-start;
+}
+
+button {
+  font-weight: bold;
+  background-color: white;
+  border: none;
+  cursor: pointer;
+  transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+  opacity: 1;
+  color: black;
+  padding: 0px;
+  margin: 5px;
+}
+
+button:hover {
+  opacity: 0.6;
 }
 
 /* image */
@@ -118,11 +158,13 @@
   border-radius: var(--radius);
   max-height: 600px;
   transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+  transform: translateY(0px);
 }
 
 .imgWrapper:hover {
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
     rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  transform: translateY(-20px);
 }
 
 .imgWrapper1 {
@@ -144,21 +186,4 @@
 .img-responsive {
   flex: 1;
   max-height: 350px;
-}
-
-/* img buttons */
-
-.buttonContainer {
-  display: flex;
-  justify-content: flex-start;
-}
-
-.buttonContainer-left {
-  justify-content: flex-end;
-}
-
-button {
-  background-color: white;
-  border: none;
-  cursor: pointer;
 }

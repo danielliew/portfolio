@@ -12,10 +12,14 @@ const About: React.FC = () => {
   const aProps = {
     className: styles.a,
     target: "_blank",
+    rel: "noreferrer",
   };
   return (
     <div>
       <p>
+        "Problem solving is a lifestyle."
+        <br />
+        <br />
         Hello! My name is Daniel and I'm a Junior at Rollins College in the
         picturesque city of Winter Park, FL.
         <br />

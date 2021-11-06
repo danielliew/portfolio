@@ -32,6 +32,11 @@
   margin-bottom: 2vh;
 }
 
+.side-list > li > img {
+  height: 2.5vh;
+  min-height: 20px;
+}
+
 .side-list::after {
   content: "";
   display: block;

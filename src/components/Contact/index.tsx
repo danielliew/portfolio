@@ -16,12 +16,12 @@ const Contact: React.FC = () => {
       <h3>Get in touch!</h3>
       <p>
         Send me{" "}
-        <a href={hrefs.linkedin} {...aProps}>
-          a LinkedIn connection request
-        </a>{" "}
-        or{" "}
         <a href={hrefs.mail} {...aProps}>
-          drop me an email.
+          an email
+        </a>{" "}
+        or drop{" "}
+        <a href={hrefs.linkedin} {...aProps}>
+          a LinkedIn connection request.
         </a>{" "}
         I'll do my best to get back to you as soon as I can!
       </p>

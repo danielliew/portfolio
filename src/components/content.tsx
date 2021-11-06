@@ -3,6 +3,39 @@ import Floating from "./Floating";
 import Project from "./Project";
 import Tabs from "./Tabs";
 
+import pythonLogo from "./svg/lang/python.svg";
+import javascriptLogo from "./svg/lang/javascript.svg";
+import typescriptLogo from "./svg/lang/typescript.svg";
+import htmlLogo from "./svg/lang/html.svg";
+import cssLogo from "./svg/lang/css.svg";
+import sqlLogo from "./svg/lang/sql.svg";
+import javaLogo from "./svg/lang/java.svg";
+import cLogo from "./svg/lang/c.svg";
+
+import reactLogo from "./svg/frameworks/react.svg";
+import reactNativeLogo from "./svg/frameworks/reactNative.svg";
+import expressLogo from "./svg/frameworks/express.svg";
+import mySQLLogo from "./svg/frameworks/mySQL.svg";
+import graphQLLogo from "./svg/frameworks/graphQL.svg";
+import gaLogo from "./svg/frameworks/ga.svg";
+import dockerLogo from "./svg/frameworks/docker.svg";
+import kubernetesLogo from "./svg/frameworks/kubernetes.svg";
+import gcpLogo from "./svg/frameworks/gcp.svg";
+import awsLogo from "./svg/frameworks/aws.svg";
+import azureDevopsLogo from "./svg/frameworks/azureDevops.svg";
+import sonarLintLogo from "./svg/frameworks/sonarLint.svg";
+import docuSignLogo from "./svg/frameworks/docuSign.svg";
+import adobeSignLogo from "./svg/frameworks/adobeSign.svg";
+import appSheetLogo from "./svg/frameworks/appSheet.svg";
+
+import fullstack from "./svg/areasOI/fullstack.svg";
+import webDev from "./svg/areasOI/webDev.svg";
+import mobile from "./svg/areasOI/mobile.svg";
+import uiux from "./svg/areasOI/uiux.svg";
+import webS from "./svg/areasOI/webS.svg";
+import projectM from "./svg/areasOI/projectM.svg";
+import customerR from "./svg/areasOI/customerR.svg";
+
 import web1 from "./images/supersharkz/web1.png";
 import web2 from "./images/supersharkz/web2.png";
 import web3 from "./images/supersharkz/web3.png";
@@ -169,78 +202,105 @@ const skillsFloatingContent = [
     title: "Languages I'm comfortable with",
     list: [
       {
-        logo: <div>P</div>,
+        logo: <img src={pythonLogo} alt="py" />,
         text: "Python",
       },
       {
-        logo: <div>J</div>,
+        logo: <img src={javascriptLogo} alt="js" />,
         text: "JavaScript",
       },
       {
-        logo: <div>T</div>,
-        text: "JavaScript",
-      },
-      {
-        logo: <div>J</div>,
+        logo: <img src={typescriptLogo} alt="ts" />,
         text: "TypeScript",
       },
       {
-        logo: <div>H</div>,
+        logo: <img src={htmlLogo} alt="html" />,
         text: "HTML",
       },
       {
-        logo: <div>C</div>,
+        logo: <img src={cssLogo} alt="css" />,
         text: "CSS",
       },
       {
-        logo: <div>S</div>,
+        logo: <img src={sqlLogo} alt="sql" />,
         text: "SQL",
       },
       {
-        logo: <div>J</div>,
+        logo: <img src={javaLogo} alt="java" />,
         text: "Java",
       },
       {
-        logo: <div>C</div>,
+        logo: <img src={cLogo} alt="c" />,
         text: "C",
-      },
-      {
-        logo: <div>M</div>,
-        text: "MIPS",
       },
     ],
   },
   {
     title: "Favorite frameworks & tools",
     list: [
-      { logo: <div>R</div>, text: "React" },
-      { logo: <div>R</div>, text: "React Native" },
-      { logo: <div>G</div>, text: "GraphQL" },
-      { logo: <div>G</div>, text: "GitHub Actions" },
-      { logo: <div>D</div>, text: "Docker" },
-      { logo: <div>K</div>, text: "Kubernetes" },
-      { logo: <div>G</div>, text: "Google Cloud Platform" },
-      { logo: <div>A</div>, text: "Amazon Web Services" },
-      { logo: <div>A</div>, text: "Azure DevOps" },
-      { logo: <div>S</div>, text: "SonarLint" },
-      { logo: <div>A</div>, text: "AdobeSign" },
-      { logo: <div>G</div>, text: "GigaSign" },
-      { logo: <div>A</div>, text: "AppSheet" },
+      { logo: <img src={reactLogo} alt="React" />, text: "React" },
+      {
+        logo: <img src={reactNativeLogo} alt="React Native" />,
+        text: "React Native",
+      },
+      { logo: <img src={expressLogo} alt="Express" />, text: "Express" },
+      { logo: <img src={mySQLLogo} alt="MySQL" />, text: "MySQL" },
+      { logo: <img src={graphQLLogo} alt="GraphQL" />, text: "GraphQL" },
+      {
+        logo: <img src={gaLogo} alt="GitHub Actions" />,
+        text: "GitHub Actions",
+      },
+      { logo: <img src={dockerLogo} alt="Docker" />, text: "Docker" },
+      {
+        logo: <img src={kubernetesLogo} alt="Kubernetes" />,
+        text: "Kubernetes",
+      },
+      {
+        logo: <img src={gcpLogo} alt="Google Cloud Platform" />,
+        text: "Google Cloud Platform",
+      },
+      {
+        logo: <img src={awsLogo} alt="Amazon Web Services" />,
+        text: "Amazon Web Services",
+      },
+      {
+        logo: <img src={azureDevopsLogo} alt="Azure DevOps" />,
+        text: "Azure DevOps",
+      },
+      { logo: <img src={sonarLintLogo} alt="SonarLint" />, text: "SonarLint" },
+      { logo: <img src={docuSignLogo} alt="DocuSign" />, text: "DocuSign" },
+      { logo: <img src={adobeSignLogo} alt="AdobeSign" />, text: "AdobeSign" },
+      { logo: <img src={appSheetLogo} alt="AppSheet" />, text: "AppSheet" },
     ],
   },
   {
     title: "My areas of interest",
     list: [
       {
-        logo: <div>F</div>,
+        logo: <img src={fullstack} alt="Full stack development" />,
         text: "Full stack development",
       },
-      { logo: <div>W</div>, text: "Web development" },
-      { logo: <div>M</div>, text: "Mobile development" },
-      { logo: <div>U</div>, text: "UI/UX design" },
-      { logo: <div>W</div>, text: "Website Security" },
-      { logo: <div>P</div>, text: "Project Management" },
-      { logo: <div>C</div>, text: "Customer Relations" },
+      {
+        logo: <img src={webDev} alt="Web development" />,
+        text: "Web development",
+      },
+      {
+        logo: <img src={mobile} alt="Mobile development" />,
+        text: "Mobile development",
+      },
+      { logo: <img src={uiux} alt="UI/UX design" />, text: "UI/UX design" },
+      {
+        logo: <img src={webS} alt="Website Security" />,
+        text: "Website Security",
+      },
+      {
+        logo: <img src={projectM} alt="Project Management" />,
+        text: "Project Management",
+      },
+      {
+        logo: <img src={customerR} alt="Customer Relations" />,
+        text: "Customer Relations",
+      },
     ],
   },
 ];

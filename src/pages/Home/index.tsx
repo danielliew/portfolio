@@ -4,12 +4,23 @@ import Heading from "../../components/Heading";
 import useResponsive from "../../hooks/useResponsive";
 import styles from "./Home.module.css";
 
+import linkedInIcon from "../../components/svg/linkedIn.svg";
+import githubIcon from "../../components/svg/github.svg";
+import emailIcon from "../../components/svg/email.svg";
+import ChineseName from "../../components/ChineseName";
+
 export const SideList: React.FC = () => {
   return (
     <ul className={`${styles["side-list"]}`}>
-      <li>linkedin</li>
-      <li>github</li>
-      <li>email</li>
+      <li>
+        <img src={linkedInIcon} alt="linkedIn" />
+      </li>
+      <li>
+        <img src={githubIcon} alt="github" />
+      </li>
+      <li>
+        <img src={emailIcon} alt="email" />
+      </li>
     </ul>
   );
 };
@@ -29,9 +40,9 @@ const Home: React.FC = () => {
           <div>
             <p className={styles["top-pretext"]}>Hi, my name is</p>
             <h1 className={styles["top-title"]}>Daniel Liew</h1>
-            <p className={styles["top-posttext"]}>
-              Problem solving is a lifestyle.
-            </p>
+            <div className={styles["top-posttext"]}>
+              <ChineseName />
+            </div>
           </div>
         </section>
 
@@ -55,8 +66,8 @@ const Home: React.FC = () => {
             </div>
           )}
           <div className={styles["footer-container"]}>
-            <p>Designed and built by Daniel Liew</p>
-            <p>Nov 2021</p>
+            <small>Designed and built by Daniel Liew</small>
+            <small>Nov 2021</small>
           </div>
         </section>
       </div>

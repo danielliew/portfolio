@@ -2,12 +2,15 @@ import React, { useState } from "react";
 import useResponsive from "../../hooks/useResponsive";
 import styles from "./Project.module.css";
 import { ProjectProps } from "./types";
+import openIcon from "../svg/open.svg";
+import openLightIcon from "../svg/open-light.svg";
 
 const Project: React.FC<ProjectProps> = ({ project, left }) => {
   const [pic, setPic] = useState(0);
-  const onBack = () => setPic((p) => (p === 0 ? 0 : p - 1));
+  const onBack = () =>
+    setPic((p) => (p === 0 ? project.images.length - 1 : p - 1));
   const onNext = () =>
-    setPic((p) => (p === project.images.length - 1 ? p : p + 1));
+    setPic((p) => (p === project.images.length - 1 ? 0 : p + 1));
 
   const isLg = useResponsive();
 
@@ -33,17 +36,6 @@ const Project: React.FC<ProjectProps> = ({ project, left }) => {
             />
           </div>
         </div>
-
-        {project.images.length > 1 ? (
-          <div
-            className={`${styles.buttonContainer} ${
-              left && styles["buttonContainer-left"]
-            }`}
-          >
-            <button onClick={onBack}>Back</button>
-            <button onClick={onNext}>Next</button>
-          </div>
-        ) : null}
       </div>
 
       <div
@@ -56,6 +48,8 @@ const Project: React.FC<ProjectProps> = ({ project, left }) => {
         <a
           className={`${styles.a} ${isLg ? "" : styles["a-responsive"]}`}
           href={project.url || "/"}
+          target="_blank"
+          rel="noreferrer"
         >
           {project.title}
         </a>
@@ -69,6 +63,39 @@ const Project: React.FC<ProjectProps> = ({ project, left }) => {
             <small>{tag}</small>
           ))}
         </div>
+
+        {project.images.length > 1 && isLg ? (
+          <div
+            className={`${styles.buttonContainer} ${
+              left && styles["buttonContainer-left"]
+            }`}
+          >
+            <button onClick={onBack}>Back</button>
+            <button onClick={onNext}>Next</button>
+          </div>
+        ) : null}
+
+        {isLg && project.url ? (
+          <a
+            className={`${styles.a} ${styles["a-responsive"]} ${styles.openIcon}`}
+            href={project.url}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img src={openIcon} alt="open" />
+          </a>
+        ) : null}
+
+        {!isLg && project.url ? (
+          <a
+            className={`${styles.a} ${styles["a-responsive"]} ${styles.openLightIcon}`}
+            href={project.url}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img src={openLightIcon} alt="open" />
+          </a>
+        ) : null}
       </div>
     </div>
   );

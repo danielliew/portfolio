@@ -11,12 +11,17 @@
   transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
   border-radius: 15px;
   cursor: pointer;
+  text-align: center;
 }
 
 .floatingItem > div {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.floatingItem > div > img {
+  height: 2.5vh;
+  min-height: 20px;
 }
 .floatingItem > small {
   white-space: nowrap;
