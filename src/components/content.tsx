@@ -17,6 +17,7 @@ import ijmWeb1 from "./images/ijm/web1.png";
 import ijmApp1 from "./images/ijm/app1.jpg";
 import pokerApp1 from "./images/poker/app1.png";
 import devopsGh1 from "./images/ytl/gh1.png";
+import Contact from "./Contact";
 
 const experienceTabContent = [
   {
@@ -250,6 +251,7 @@ const projectsContent = [
     images: [web1, web2, web3, web4],
     text: "A professional website, swim school admin portal, instructor portal, and parent portal - all in one.",
     tags: ["React", "Express", "MySQL", "Google App Engine"],
+    url: "https://supersharkz.et.r.appspot.com/",
   },
   {
     title: "Supersharkz",
@@ -257,6 +259,7 @@ const projectsContent = [
     mobile: true,
     text: "Parents can manage their account, register for classes, and track their students progress, whilst instructors can manage and monitor their active classes and schedules.",
     tags: ["React Native", "Expo", "Express", "Socket.io"],
+    url: "https://apps.apple.com/us/app/supersharkz/id1578259870?itsct=apps_box_link&itscg=30200",
   },
   {
     title: "IJM Land Calendar Booking",
@@ -282,12 +285,14 @@ const projectsContent = [
     images: [pokerApp1],
     text: "Play 1v1 poker against an AI bot that has played over 1,000,000 random poker games",
     tags: ["Python", "Kivy", "TensorFlow", "Machine Learning"],
+    url: "https://youtu.be/xPMff4euRmI",
   },
   {
     title: "DevOps Exploration",
     images: [devopsGh1],
     text: "A research repository containing several mini-projects demonstrating Agile methodology and Devops best practices",
     tags: ["git", "Docker", "Kubernetes", "Github Actions", "Agile"],
+    url: "https://github.com/danielliew/devops-test",
   },
 ];
 
@@ -338,5 +343,10 @@ export const contentSections = [
   {
     navText: "Contact",
     text: "What's Next",
+    content: (
+      <div>
+        <Contact />
+      </div>
+    ),
   },
 ];

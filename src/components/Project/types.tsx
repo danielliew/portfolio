@@ -5,6 +5,7 @@ export interface ProjectProps {
     text: string;
     tags: string[];
     mobile?: boolean;
+    url?: string;
   };
   left?: boolean;
 }

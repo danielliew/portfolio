@@ -50,10 +50,24 @@
   cursor: pointer;
   opacity: 1;
   transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+  position: relative;
 }
 
 .navItem:hover {
   opacity: 0.6;
+}
+
+.dot {
+  content: "";
+  width: 7px;
+  height: 7px;
+  background-color: #191414;
+  border-radius: 50%;
+  align-self: center;
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  margin-left: -5px;
 }
 
 /* hamburger */

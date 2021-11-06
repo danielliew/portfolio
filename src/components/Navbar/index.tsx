@@ -4,18 +4,36 @@ import useResponsive from "../../hooks/useResponsive";
 import { contentSections } from "../content";
 import styles from "./Navbar.module.css";
 
-const NavItems: React.FC = () => {
-  const onClick = (navText: string) => {
-    const section = document.querySelector(`#section-${navText}`);
+const NavItem: React.FC<{ navText: string; onHamburger: () => void }> = ({
+  navText,
+  onHamburger,
+}) => {
+  const onClick = (nt: string) => {
+    const section = document.querySelector(`#section-${nt}`);
     if (section) section.scrollIntoView();
+    onHamburger();
   };
+  const [{ opacity }, set] = useSpring(() => ({ opacity: 0 }));
+  return (
+    <li
+      className={styles.navItem}
+      onClick={() => onClick(navText)}
+      onMouseEnter={() => set({ opacity: 1 })}
+      onMouseLeave={() => set({ opacity: 0 })}
+    >
+      {navText}
+      <animated.span style={{ opacity }} className={styles.dot} />
+    </li>
+  );
+};
 
+const NavItems: React.FC<{
+  onHamburger: () => void;
+}> = ({ onHamburger }) => {
   return (
     <>
       {contentSections.map(({ navText }, i) => (
-        <li className={styles.navItem} key={i} onClick={() => onClick(navText)}>
-          {navText}
-        </li>
+        <NavItem navText={navText} key={i} onHamburger={onHamburger} />
       ))}
     </>
   );
@@ -26,6 +44,7 @@ const Navbar: React.FC = () => {
 
   const [menu, setMenu] = useState(false);
   const onHamburger = () => {
+    if (isLg) return;
     setMenu((m) => {
       if (!m) {
         document.body.style.overflow = "hidden";
@@ -76,7 +95,7 @@ const Navbar: React.FC = () => {
       {isLg ? (
         <div className={styles["nav-items-container"]}>
           <ul className={styles["nav-items"]}>
-            <NavItems />
+            <NavItems onHamburger={onHamburger} />
           </ul>
         </div>
       ) : (
@@ -101,7 +120,7 @@ const Navbar: React.FC = () => {
       <animated.div style={propsMenu} className={styles.menu}>
         <div className={styles["centered"]}>
           <ul className={styles["nav-items-menu"]}>
-            <NavItems />
+            <NavItems onHamburger={onHamburger} />
           </ul>
         </div>
       </animated.div>

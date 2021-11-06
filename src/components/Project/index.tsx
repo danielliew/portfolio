@@ -53,8 +53,11 @@ const Project: React.FC<ProjectProps> = ({ project, left }) => {
             : styles["content-responsive"]
         }
       >
-        <a>
-          <h3>{project.title}</h3>
+        <a
+          className={`${styles.a} ${isLg ? "" : styles["a-responsive"]}`}
+          href={project.url || "/"}
+        >
+          {project.title}
         </a>
         <div className={isLg ? styles.projectText : ""}>
           <p>{project.text}</p>
