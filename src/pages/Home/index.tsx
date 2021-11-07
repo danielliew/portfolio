@@ -82,6 +82,12 @@ const Home: React.FC = () => {
           <div className={styles["footer-container"]}>
             <small>Designed and built by Daniel Liew</small>
             <small>Nov 2021</small>
+            <small
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+              className={styles.a}
+            >
+              Back to top
+            </small>
           </div>
         </section>
       </div>

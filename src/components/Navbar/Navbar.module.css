@@ -88,6 +88,7 @@
 .hamburger-container {
   border: 0px;
   background: none;
+  outline: none;
 }
 
 .hamburger-line {

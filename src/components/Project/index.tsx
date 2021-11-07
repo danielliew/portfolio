@@ -59,8 +59,8 @@ const Project: React.FC<ProjectProps> = ({ project, left }) => {
         <div
           className={`${styles.tags} ${(left || !isLg) && styles["tags-left"]}`}
         >
-          {project.tags.map((tag) => (
-            <small>{tag}</small>
+          {project.tags.map((tag, i) => (
+            <small key={i}>{tag}</small>
           ))}
         </div>
 
