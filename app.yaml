@@ -1,0 +1,22 @@
+service: default
+runtime: nodejs16
+handlers:
+  - url: /
+    static_files: build/index.html
+    upload: build/index.html
+    secure: always
+  - url: /static
+    static_dir: build/static
+  - url: /site.webmanifest
+    static_files: build/site.webmanifest
+    upload: build/site.webmanifest
+  - url: /asset-manifest.json
+    static_files: build/asset-manifest.json
+    upload: build/asset-manifest.json
+  - url: /service-worker.json
+    static_files: build/service-worker.json
+    upload: build/service-worker.json
+  - url: /.*
+    static_files: build/index.html
+    upload: build/index.html
+    secure: always

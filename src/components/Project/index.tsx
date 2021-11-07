@@ -4,6 +4,7 @@ import styles from "./Project.module.css";
 import { ProjectProps } from "./types";
 import openIcon from "../svg/open.svg";
 import openLightIcon from "../svg/open-light.svg";
+import { openInNewTab } from "../About";
 
 const Project: React.FC<ProjectProps> = ({ project, left }) => {
   const [pic, setPic] = useState(0);
@@ -48,10 +49,9 @@ const Project: React.FC<ProjectProps> = ({ project, left }) => {
         <a
           className={`${styles.a} ${isLg ? "" : styles["a-responsive"]}`}
           href={project.url || "/"}
-          target="_blank"
-          rel="noreferrer"
+          {...openInNewTab}
         >
-          {project.title}
+          <span className={styles.title}>{project.title}</span>
         </a>
         <div className={isLg ? styles.projectText : ""}>
           <p>{project.text}</p>
@@ -75,26 +75,18 @@ const Project: React.FC<ProjectProps> = ({ project, left }) => {
           </div>
         ) : null}
 
-        {isLg && project.url ? (
-          <a
-            className={`${styles.a} ${styles["a-responsive"]} ${styles.openIcon}`}
-            href={project.url}
-            target="_blank"
-            rel="noreferrer"
-          >
-            <img src={openIcon} alt="open" />
-          </a>
-        ) : null}
-
-        {!isLg && project.url ? (
-          <a
-            className={`${styles.a} ${styles["a-responsive"]} ${styles.openLightIcon}`}
-            href={project.url}
-            target="_blank"
-            rel="noreferrer"
-          >
-            <img src={openLightIcon} alt="open" />
-          </a>
+        {project.url ? (
+          <div>
+            <a
+              className={`${styles.a} ${styles["a-responsive"]} ${
+                isLg ? styles.openIcon : styles.openLightIcon
+              }`}
+              href={project.url}
+              {...openInNewTab}
+            >
+              <img src={isLg ? openIcon : openLightIcon} alt="open" />
+            </a>
+          </div>
         ) : null}
       </div>
     </div>

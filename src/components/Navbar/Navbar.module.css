@@ -17,6 +17,12 @@
   justify-content: center;
 }
 
+.logo-container > img {
+  height: 4vh;
+  min-height: 40px;
+  margin: 15px 0px 15px 20px;
+}
+
 /* navitems stuff */
 
 .nav-items-container {

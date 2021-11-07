@@ -3,6 +3,7 @@ import { useSpring, animated, useSpringRef, useChain } from "react-spring";
 import useResponsive from "../../hooks/useResponsive";
 import { contentSections } from "../content";
 import styles from "./Navbar.module.css";
+import logo from "../svg/logo.svg";
 
 const NavItem: React.FC<{ navText: string; onHamburger: () => void }> = ({
   navText,
@@ -87,7 +88,7 @@ const Navbar: React.FC = () => {
   return (
     <nav className={styles.navbar}>
       <div className={styles["logo-container"]}>
-        <h1>D</h1>
+        <img src={logo} alt="D" />
       </div>
 
       <div />

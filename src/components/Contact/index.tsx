@@ -1,4 +1,5 @@
 import React from "react";
+import { openInNewTab } from "../About";
 import styles from "./Contact.module.css";
 
 const hrefs = {
@@ -9,7 +10,7 @@ const hrefs = {
 const Contact: React.FC = () => {
   const aProps = {
     className: styles.a,
-    target: "_blank",
+    ...openInNewTab,
   };
   return (
     <div>

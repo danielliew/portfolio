@@ -8,18 +8,31 @@ import linkedInIcon from "../../components/svg/linkedIn.svg";
 import githubIcon from "../../components/svg/github.svg";
 import emailIcon from "../../components/svg/email.svg";
 import ChineseName from "../../components/ChineseName";
+import { openInNewTab } from "../../components/About";
+
+const hrefs = {
+  linkedin: "https://www.linkedin.com/in/daniel-liew/",
+  github: "https://github.com/danielliew",
+  mail: "mailto::danieliewjh@gmail.com",
+};
 
 export const SideList: React.FC = () => {
   return (
     <ul className={`${styles["side-list"]}`}>
       <li>
-        <img src={linkedInIcon} alt="linkedIn" />
+        <a href={hrefs.linkedin} {...openInNewTab}>
+          <img src={linkedInIcon} alt="linkedIn" />
+        </a>
       </li>
       <li>
-        <img src={githubIcon} alt="github" />
+        <a href={hrefs.github} {...openInNewTab}>
+          <img src={githubIcon} alt="github" />
+        </a>
       </li>
       <li>
-        <img src={emailIcon} alt="email" />
+        <a href={hrefs.mail} {...openInNewTab}>
+          <img src={emailIcon} alt="email" />
+        </a>
       </li>
     </ul>
   );
@@ -42,6 +55,7 @@ const Home: React.FC = () => {
             <h1 className={styles["top-title"]}>Daniel Liew</h1>
             <div className={styles["top-posttext"]}>
               <ChineseName />
+              <p>Problem solving is a lifestyle.</p>
             </div>
           </div>
         </section>

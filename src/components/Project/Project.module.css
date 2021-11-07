@@ -43,6 +43,11 @@
   color: white;
 }
 
+.title {
+  margin-bottom: 20px;
+  display: block;
+}
+
 .a {
   font-weight: bold;
   transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
@@ -51,8 +56,6 @@
   text-decoration: none;
   cursor: pointer;
   font-size: large;
-  margin-bottom: 20px;
-  display: block;
 }
 
 .a:hover {
@@ -65,8 +68,9 @@
 }
 
 .a > img {
-  height: 2.5vh;
+  height: 2vh;
   min-height: 20px;
+  margin: 10px 0px 0px 3px;
 }
 
 .openIcon {

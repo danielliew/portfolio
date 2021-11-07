@@ -8,18 +8,19 @@ const hrefs = {
   supersharkz: "https://supersharkz.com/",
 };
 
+export const openInNewTab = {
+  target: "_blank",
+  rel: "noreferrer",
+};
+
 const About: React.FC = () => {
   const aProps = {
     className: styles.a,
-    target: "_blank",
-    rel: "noreferrer",
+    ...openInNewTab,
   };
   return (
     <div>
       <p>
-        "Problem solving is a lifestyle."
-        <br />
-        <br />
         Hello! My name is Daniel and I'm a Junior at Rollins College in the
         picturesque city of Winter Park, FL.
         <br />
