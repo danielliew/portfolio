@@ -1,13 +1,17 @@
-import React from "react";
-import Navbar from "./components/Navbar";
-import Home from "./pages/Home";
+import React, { lazy, Suspense } from "react";
+import PageLoader from "./components/PageLoader";
+
+const Navbar = lazy(() => import("./components/Navbar"));
+const Home = lazy(() => import("./pages/Home"));
 
 const App: React.FC = () => {
   return (
-    <div>
-      <Navbar />
-      <Home />
-    </div>
+    <Suspense fallback={<PageLoader />}>
+      <div>
+        <Navbar />
+        <Home />
+      </div>
+    </Suspense>
   );
 };
 
