@@ -1,46 +1,89 @@
 import React, { useState } from "react";
 import { useSpring, animated, useSpringRef, useChain } from "react-spring";
+import { useNavigate } from "react-router";
 import useResponsive from "../../hooks/useResponsive";
-import { contentSections } from "../content";
 import styles from "./Navbar.module.css";
+import dstyles from "../HoverDecoration/dot.module.css";
 import logo from "../svg/logo.svg";
+import { ContentSections, NavItemProps, NavItemsProps } from "./types";
 
-const NavItem: React.FC<{ navText: string; onHamburger: () => void }> = ({
+const HoverArrow = () => (
+  <svg
+    className={styles.hoverArrow}
+    width="10"
+    height="10"
+    viewBox="0 0 10 10"
+    aria-hidden="true"
+  >
+    <g fillRule="evenodd">
+      <path className={styles.hoverArrowLinePath} d="M0 5h7"></path>
+      <path className={styles.hoverArrowTipPath} d="M1 1l4 4-4 4"></path>
+    </g>
+  </svg>
+);
+
+const NavItem: React.FC<NavItemProps> = ({
+  href,
   navText,
+  solid,
   onHamburger,
 }) => {
-  const onClick = (nt: string) => {
-    const section = document.querySelector(`#section-${nt}`);
-    if (section) section.scrollIntoView();
+  const navigate = useNavigate();
+  const isLg = useResponsive();
+
+  const onClick = () => {
     onHamburger();
+    if (href) navigate(href);
+    const section = document.querySelector(`#section-${navText}`);
+    if (section) section.scrollIntoView();
   };
+
   const [{ opacity }, set] = useSpring(() => ({ opacity: 0 }));
+
   return (
     <li
-      className={styles.navItem}
-      onClick={() => onClick(navText)}
+      className={`${styles.navItem} ${solid && styles.navItemSolid} ${
+        !isLg && solid && styles.navItemSolidLight
+      }`}
+      onClick={() => onClick()}
       onMouseEnter={() => set({ opacity: 1 })}
       onMouseLeave={() => set({ opacity: 0 })}
     >
-      {navText}
-      <animated.span style={{ opacity }} className={styles.dot} />
+      <span
+        className={`${styles.navItemContent} ${
+          !isLg && !solid && styles.navItemContentMenu
+        }`}
+      >
+        {navText}
+        {solid && <HoverArrow />}
+      </span>
+      {!solid && <animated.span style={{ opacity }} className={dstyles.dot} />}
     </li>
   );
 };
 
-const NavItems: React.FC<{
-  onHamburger: () => void;
-}> = ({ onHamburger }) => {
+const NavItems: React.FC<NavItemsProps> = ({
+  contentSections,
+  onHamburger,
+}) => {
   return (
     <>
-      {contentSections.map(({ navText }, i) => (
-        <NavItem navText={navText} key={i} onHamburger={onHamburger} />
+      {contentSections.map(({ navText, href, solid }, i) => (
+        <NavItem
+          href={href}
+          navText={navText}
+          solid={solid}
+          key={i}
+          onHamburger={onHamburger}
+        />
       ))}
     </>
   );
 };
 
-const Navbar: React.FC = () => {
+const Navbar: React.FC<{
+  contentSections: ContentSections;
+}> = ({ contentSections }) => {
   const isLg = useResponsive();
 
   const [menu, setMenu] = useState(false);
@@ -54,6 +97,10 @@ const Navbar: React.FC = () => {
       }
       return !m;
     });
+  };
+  const navItemsOnHamburger = () => {
+    setMenu(false);
+    document.body.style.overflow = "auto";
   };
 
   const menuSpringRef = useSpringRef();
@@ -96,7 +143,10 @@ const Navbar: React.FC = () => {
       {isLg ? (
         <div className={styles["nav-items-container"]}>
           <ul className={styles["nav-items"]}>
-            <NavItems onHamburger={onHamburger} />
+            <NavItems
+              contentSections={contentSections}
+              onHamburger={navItemsOnHamburger}
+            />
           </ul>
         </div>
       ) : (
@@ -121,7 +171,10 @@ const Navbar: React.FC = () => {
       <animated.div style={propsMenu} className={styles.menu}>
         <div className={styles["centered"]}>
           <ul className={styles["nav-items-menu"]}>
-            <NavItems onHamburger={onHamburger} />
+            <NavItems
+              contentSections={contentSections}
+              onHamburger={navItemsOnHamburger}
+            />
           </ul>
         </div>
       </animated.div>

@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./About.module.css";
+import astyles from "../styles/a.module.css";
 
 const hrefs = {
   ijm: "https://www.ijm.com/",
@@ -15,7 +15,7 @@ export const openInNewTab = {
 
 const About: React.FC = () => {
   const aProps = {
-    className: styles.a,
+    className: astyles.a,
     ...openInNewTab,
   };
   return (

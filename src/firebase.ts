@@ -12,4 +12,5 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
-getAnalytics(app);
+
+if (process.env.NODE_ENV === "production") getAnalytics(app);

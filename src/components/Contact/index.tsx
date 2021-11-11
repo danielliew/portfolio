@@ -1,6 +1,6 @@
 import React from "react";
 import { openInNewTab } from "../About";
-import styles from "./Contact.module.css";
+import astyles from "../styles/a.module.css";
 
 const hrefs = {
   linkedin: "https://www.linkedin.com/in/daniel-liew/",
@@ -9,7 +9,7 @@ const hrefs = {
 
 const Contact: React.FC = () => {
   const aProps = {
-    className: styles.a,
+    className: astyles.a,
     ...openInNewTab,
   };
   return (

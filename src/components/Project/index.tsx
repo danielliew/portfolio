@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import useResponsive from "../../hooks/useResponsive";
 import styles from "./Project.module.css";
+import astyles from "../styles/a.module.css";
 import { ProjectProps } from "./types";
 import openIcon from "../svg/open.svg";
 import openLightIcon from "../svg/open-light.svg";
@@ -47,7 +48,9 @@ const Project: React.FC<ProjectProps> = ({ project, left }) => {
         }
       >
         <a
-          className={`${styles.a} ${isLg ? "" : styles["a-responsive"]}`}
+          className={`${styles.a} ${astyles.a} ${
+            isLg ? "" : styles["a-responsive"]
+          }`}
           href={project.url || "/"}
           {...openInNewTab}
         >
@@ -70,15 +73,19 @@ const Project: React.FC<ProjectProps> = ({ project, left }) => {
               left && styles["buttonContainer-left"]
             }`}
           >
-            <button onClick={onBack}>Back</button>
-            <button onClick={onNext}>Next</button>
+            <button className={styles.button} onClick={onBack}>
+              Back
+            </button>
+            <button className={styles.button} onClick={onNext}>
+              Next
+            </button>
           </div>
         ) : null}
 
         {project.url ? (
           <div>
             <a
-              className={`${styles.a} ${styles["a-responsive"]} ${
+              className={`${styles.a} ${astyles.a} ${styles["a-responsive"]} ${
                 isLg ? styles.openIcon : styles.openLightIcon
               }`}
               href={project.url}
