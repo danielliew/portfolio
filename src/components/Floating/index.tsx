@@ -1,21 +1,39 @@
 import React, { useState } from "react";
+import { animated, useSpring } from "react-spring";
 import styles from "./Floating.module.css";
-import { FloatingProps } from "./types";
+import { FloatingContent, FloatingProps } from "./types";
 
-const Floating: React.FC<FloatingProps> = ({ content }) => {
-  const [active, setActive] = useState(-1);
-
-  const onClick = (i: number) => {
-    setActive(i);
-  };
+const FloatingItem: React.FC<FloatingContent> = ({ text, logo, showAll }) => {
+  const [{ opacity }, set] = useSpring(() => ({ opacity: 0 }));
 
   return (
-    <div className={styles.floatingContainer}>
+    <div
+      className={styles.floatingItem}
+      onMouseEnter={() => set({ opacity: 1 })}
+      onMouseLeave={() => set({ opacity: 0 })}
+    >
+      <small> </small>
+      <div>{logo}</div>
+      <animated.small
+        style={{
+          opacity: showAll ? 1 : opacity,
+        }}
+      >
+        {text}
+      </animated.small>
+    </div>
+  );
+};
+
+const Floating: React.FC<FloatingProps> = ({ content }) => {
+  const [showAll, setShowAll] = useState(false);
+  return (
+    <div
+      className={styles.floatingContainer}
+      onClick={() => setShowAll((s) => !s)}
+    >
       {content.map((item, i) => (
-        <div key={i} className={styles.floatingItem} onClick={() => onClick(i)}>
-          <div>{item.logo}</div>
-          {active === i && <small>{item.text}</small>}
-        </div>
+        <FloatingItem {...item} key={i} showAll={showAll} />
       ))}
     </div>
   );

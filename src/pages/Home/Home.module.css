@@ -87,3 +87,8 @@
 .footer-container {
   text-align: center;
 }
+
+.small {
+  display: block;
+  margin: 10px 0px;
+}

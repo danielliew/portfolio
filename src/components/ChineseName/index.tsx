@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./ChineseName.module.css";
+// import styles from "./ChineseName.module.css";
 
 const ChineseName: React.FC = () => {
   return (

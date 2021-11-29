@@ -17,15 +17,15 @@ const Tabs: React.FC<TabProps> = ({ tabs }) => {
             onClick={() => setCurrent(i)}
           >
             {item.company}
-            {current === i && <small>{company.location}</small>}
+            <small className={styles.small}>{item.location}</small>
           </button>
         ))}
       </div>
       <div>
         {company.positions.map((item, i) => (
           <div key={i} className={styles["position-timeline"]}>
-            <h4>{item.jobTitle}</h4>
-            <h6>{item.duration}</h6>
+            <h4 className={styles.h4}>{item.jobTitle}</h4>
+            <h6 className={styles.h6}>{item.duration}</h6>
             {item.content}
           </div>
         ))}

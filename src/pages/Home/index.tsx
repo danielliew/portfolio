@@ -93,11 +93,13 @@ const Home: React.FC = () => {
               </div>
             )}
             <div className={styles["footer-container"]}>
-              <small>Designed and built by Daniel Liew</small>
-              <small>Nov 2021</small>
+              <small className={styles.small}>
+                Designed and built by Daniel Liew
+              </small>
+              <small className={styles.small}>Nov 2021</small>
               <small
+                className={`${styles.small} ${astyles.a}`}
                 onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-                className={astyles.a}
               >
                 Back to top
               </small>

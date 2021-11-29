@@ -5,6 +5,7 @@
   color: black;
   text-decoration: none;
   cursor: pointer;
+  display: inline-block;
 }
 
 .a:hover {

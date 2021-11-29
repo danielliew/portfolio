@@ -4,6 +4,7 @@ import { useNavigate } from "react-router";
 import useResponsive from "../../hooks/useResponsive";
 import styles from "./Navbar.module.css";
 import dstyles from "../HoverDecoration/dot.module.css";
+import astyles from "../styles/a.module.css";
 import logo from "../svg/logo.svg";
 import { ContentSections, NavItemProps, NavItemsProps } from "./types";
 
@@ -134,7 +135,10 @@ const Navbar: React.FC<{
 
   return (
     <nav className={styles.navbar}>
-      <div className={styles["logo-container"]}>
+      <div
+        className={`${styles["logo-container"]} ${astyles.a}`}
+        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+      >
         <img src={logo} alt="D" />
       </div>
 

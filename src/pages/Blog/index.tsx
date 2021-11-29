@@ -40,6 +40,7 @@ const Blog: React.FC = () => {
     (async () => {
       getBlogPosts(0, 0);
     })();
+    // eslint-disable-next-line
   }, []);
 
   const isLg = useResponsive();

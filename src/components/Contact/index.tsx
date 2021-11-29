@@ -25,6 +25,12 @@ const Contact: React.FC = () => {
           a LinkedIn connection request.
         </a>{" "}
         I'll do my best to get back to you as soon as I can!
+        <br />
+        <br />
+        If you have time, visit the{" "}
+        <a href="/blog" {...aProps}>
+          blog.
+        </a>
       </p>
     </div>
   );

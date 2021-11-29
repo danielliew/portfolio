@@ -4,7 +4,8 @@ export interface FloatingProps {
   content: FloatingContent[];
 }
 
-interface FloatingContent {
+export interface FloatingContent {
   text: string;
   logo: React.ReactNode;
+  showAll?: boolean;
 }
