@@ -4,7 +4,7 @@ import { useNavigate } from "react-router";
 import useResponsive from "../../hooks/useResponsive";
 import styles from "./Navbar.module.css";
 import dstyles from "../HoverDecoration/dot.module.css";
-import astyles from "../styles/a.module.css";
+import astyles from "../HoverDecoration/a.module.css";
 import logo from "../svg/logo.svg";
 import { ContentSections, NavItemProps, NavItemsProps } from "./types";
 

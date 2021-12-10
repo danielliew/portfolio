@@ -1,6 +1,6 @@
 import React from "react";
 import { openInNewTab } from "../About";
-import astyles from "../styles/a.module.css";
+import astyles from "../HoverDecoration/a.module.css";
 
 const hrefs = {
   linkedin: "https://www.linkedin.com/in/daniel-liew/",

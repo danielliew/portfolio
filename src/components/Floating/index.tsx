@@ -4,13 +4,14 @@ import styles from "./Floating.module.css";
 import { FloatingContent, FloatingProps } from "./types";
 
 const FloatingItem: React.FC<FloatingContent> = ({ text, logo, showAll }) => {
-  const [{ opacity }, set] = useSpring(() => ({ opacity: 0 }));
+  const start = 0.75;
+  const [{ opacity }, set] = useSpring(() => ({ opacity: start }));
 
   return (
     <div
       className={styles.floatingItem}
       onMouseEnter={() => set({ opacity: 1 })}
-      onMouseLeave={() => set({ opacity: 0 })}
+      onMouseLeave={() => set({ opacity: start })}
     >
       <small> </small>
       <div>{logo}</div>

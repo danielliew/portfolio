@@ -1,12 +1,34 @@
 import React, { useEffect, useState } from "react";
+import { animated, useSpring } from "react-spring";
 import Navbar from "../../components/Navbar";
 import { blogNavbar, filters, blogPosts } from "../../content/blog";
 import useResponsive from "../../hooks/useResponsive";
 import styles from "./Blog.module.css";
-import astyles from "../../components/styles/a.module.css";
+import astyles from "../../components/HoverDecoration/a.module.css";
+import dstyles from "../../components/HoverDecoration/dot.module.css";
 import { blogPostType } from "./types";
 
 const pageTotal = 10;
+
+const FilterBtn: React.FC<{
+  text: string;
+  onFilter: () => void;
+  active: boolean;
+}> = ({ active, text, onFilter }) => {
+  const [{ opacity }, set] = useSpring(() => ({ opacity: 0 }));
+
+  return (
+    <button
+      className={`${styles.filterBtns} ${active && styles.filterBtnsActive}`}
+      onClick={onFilter}
+      onMouseEnter={() => set({ opacity: 1 })}
+      onMouseLeave={() => set({ opacity: 0 })}
+    >
+      <span>{text}</span>
+      {!active && <animated.span style={{ opacity }} className={dstyles.dot} />}
+    </button>
+  );
+};
 
 const Blog: React.FC = () => {
   const [page, setPage] = useState(0);
@@ -55,17 +77,16 @@ const Blog: React.FC = () => {
         </section>
 
         <section>
-          {filters.map((item, i) => (
-            <button
-              key={i}
-              className={`${styles.filterBtns} ${
-                filter === i && styles.filterBtnsActive
-              }`}
-              onClick={() => onFilter(i)}
-            >
-              {item.text}
-            </button>
-          ))}
+          <div className={styles.filterBtnsContainer}>
+            {filters.map((item, i) => (
+              <FilterBtn
+                key={i}
+                onFilter={() => onFilter(i)}
+                text={item.text}
+                active={filter === i}
+              />
+            ))}
+          </div>
 
           <div className={styles.blogList}>
             {!loading && !filtered.length ? (

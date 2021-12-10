@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import useResponsive from "../../hooks/useResponsive";
 import styles from "./Project.module.css";
-import astyles from "../styles/a.module.css";
+import astyles from "../HoverDecoration/a.module.css";
 import { ProjectProps } from "./types";
 import openIcon from "../svg/open.svg";
 import openLightIcon from "../svg/open-light.svg";
@@ -58,29 +58,26 @@ const Project: React.FC<ProjectProps> = ({ project, left }) => {
         </a>
         <div className={isLg ? styles.projectText : ""}>
           <p>{project.text}</p>
+          {project.images.length > 1 && isLg ? (
+            <div
+              className={`${styles.buttonContainer} ${
+                left && styles["buttonContainer-left"]
+              }`}
+            >
+              <button className={styles.button} onClick={onBack}>
+                Back
+              </button>
+              <button className={styles.button} onClick={onNext}>
+                Next
+              </button>
+            </div>
+          ) : null}
         </div>
         <div
           className={`${styles.tags} ${(left || !isLg) && styles["tags-left"]}`}
         >
-          {project.tags.map((tag, i) => (
-            <small key={i}>{tag}</small>
-          ))}
+          <small>{project.tags.join(" ・ ")}</small>
         </div>
-
-        {project.images.length > 1 && isLg ? (
-          <div
-            className={`${styles.buttonContainer} ${
-              left && styles["buttonContainer-left"]
-            }`}
-          >
-            <button className={styles.button} onClick={onBack}>
-              Back
-            </button>
-            <button className={styles.button} onClick={onNext}>
-              Next
-            </button>
-          </div>
-        ) : null}
 
         {project.url ? (
           <div>

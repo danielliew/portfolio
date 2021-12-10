@@ -117,7 +117,14 @@
   opacity: 1;
   color: black;
   padding: 0px;
-  margin: 5px;
+}
+
+.buttonContainer > .button {
+  margin: 5px 0px 5px 10px;
+}
+
+.buttonContainer-left > .button {
+  margin: 5px 10px 5px 0px;
 }
 
 .button:hover {
@@ -151,13 +158,11 @@
   border-radius: var(--radius);
   max-height: 600px;
   transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
-  transform: translateY(0px);
 }
 
-.imgWrapper:hover {
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
-    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
-  transform: translateY(-20px);
+.container:hover > .imgContainer > .imgWrapper {
+  box-shadow: rgba(50, 50, 93, 0.45) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.5) 0px 30px 60px -30px;
 }
 
 .imgWrapper1 {

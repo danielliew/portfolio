@@ -28,8 +28,8 @@
   transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
   padding-bottom: 5px;
   display: block;
-  font-weight: bold;
-  margin-top: 3px;
+  font-weight: 500;
+  margin-top: 5px;
 }
 
 .floatingItem:hover {

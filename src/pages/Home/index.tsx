@@ -3,7 +3,7 @@ import { contentSections } from "../../content/home";
 import Heading from "../../components/Heading";
 import useResponsive from "../../hooks/useResponsive";
 import styles from "./Home.module.css";
-import astyles from "../../components/styles/a.module.css";
+import astyles from "../../components/HoverDecoration/a.module.css";
 
 import linkedInIcon from "../../components/svg/linkedIn.svg";
 import githubIcon from "../../components/svg/github.svg";
