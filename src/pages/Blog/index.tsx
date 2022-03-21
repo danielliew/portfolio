@@ -120,7 +120,10 @@ const Blog: React.FC = () => {
                           alt="preview"
                         />
                       </picture>
-                      <a className={`${styles.postReadMore} ${astyles.a}`}>
+                      <a
+                        className={`${styles.postReadMore} ${astyles.a}`}
+                        href="/blog"
+                      >
                         Read more
                       </a>
                     </article>

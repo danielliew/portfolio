@@ -58,7 +58,7 @@ const experienceTabContent = [
     location: "Shah Alam, Malaysia",
     positions: [
       {
-        jobTitle: "Freelance Software Developer (Full-stack)",
+        jobTitle: "Freelance Software Engineer (Full-stack)",
         duration: "August 2020 – Present",
         content: (
           <div>
@@ -121,7 +121,7 @@ const experienceTabContent = [
     location: "Kuala Lumpur, Malaysia",
     positions: [
       {
-        jobTitle: "Freelance Software Developer (Full-stack)",
+        jobTitle: "Freelance Software Engineer (Full-stack)",
         duration: "Feb 2021 – May 2021",
         content: (
           <ul>

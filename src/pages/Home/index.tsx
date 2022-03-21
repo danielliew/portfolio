@@ -11,6 +11,7 @@ import emailIcon from "../../components/svg/email.svg";
 import ChineseName from "../../components/ChineseName";
 import { openInNewTab } from "../../components/About";
 import Navbar from "../../components/Navbar";
+import Qoute from "../../components/Quote";
 
 const hrefs = {
   linkedin: "https://www.linkedin.com/in/daniel-liew/",
@@ -68,7 +69,7 @@ const Home: React.FC = () => {
               <h1 className={styles["top-title"]}>Daniel Liew</h1>
               <div className={styles["top-posttext"]}>
                 <ChineseName />
-                <p>Problem solving is a lifestyle.</p>
+                <Qoute />
               </div>
             </div>
           </section>
