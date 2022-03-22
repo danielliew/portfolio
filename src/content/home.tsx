@@ -51,6 +51,7 @@ import ijmWeb1 from "../components/images/ijm/web1.png";
 import ijmApp1 from "../components/images/ijm/app1.jpg";
 import pokerApp1 from "../components/images/poker/app1.png";
 import devopsGh1 from "../components/images/ytl/gh1.png";
+import dliewPic from "../components/images/dliew.com_.png";
 
 const experienceTabContent = [
   {
@@ -353,6 +354,13 @@ const projectsContent = [
     text: "A research repository containing several mini-projects demonstrating Agile methodology and Devops best practices",
     tags: ["git", "Docker", "Kubernetes", "Github Actions", "Agile"],
     url: "https://github.com/danielliew/devops-test",
+  },
+  {
+    title: "Portfolio",
+    images: [dliewPic],
+    text: "The website you're currently on. A collection of my work, experiences and stuff.",
+    tags: ["React", "Google App Engine", "TypeScript", "CSS", "UI/UX design"],
+    url: "https://github.com/danielliew/portfolio",
   },
 ];
 
