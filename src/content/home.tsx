@@ -1,4 +1,6 @@
-import About from "../components/About";
+import styles from "../pages/Home/Home.module.css"
+
+import About, { openInNewTab } from "../components/About";
 import Floating from "../components/Floating";
 import Project from "../components/Project";
 import Tabs from "../components/Tabs";
@@ -52,6 +54,7 @@ import ijmApp1 from "../components/images/ijm/app1.jpg";
 import pokerApp1 from "../components/images/poker/app1.png";
 import devopsGh1 from "../components/images/ytl/gh1.png";
 import dliewPic from "../components/images/dliew.com_.png";
+import cardDeck from "../components/images/cards.png";
 
 const experienceTabContent = [
   {
@@ -308,17 +311,28 @@ const skillsFloatingContent = [
 
 const projectsContent = [
   {
+    title: "Daniel's Premium Card deck",
+    images: [cardDeck],
+    text: <p>Quick self-promo: I was unsatisfied with online SVG/PNG card decks so I made my own on Figma. Honestly pretty happy with how this turned out so I decided to sell it on Etsy.{" "}
+        <a className={styles.button} href="https://www.etsy.com/shop/theDanielLiewStore" {...openInNewTab}>
+          Check out the card deck on Etsy!
+        </a>
+      </p>,
+    tags: ["Figma", "Frontend", "Graphic Design"],
+    url: "https://www.etsy.com/shop/theDanielLiewStore",
+  },
+  {
     title: "Supersharkz.com",
     images: [web1, web2, web3, web4],
-    text: "A professional website, swim school admin portal, instructor portal, and parent portal - all in one.",
-    tags: ["React", "Express", "MySQL", "Google App Engine"],
+    text: "A professional website, swim school admin portal, instructor portal, and parent portal - all in one React app. Powered by an ExpressJS server, a socket.io realtime microservice, and MySQL database.",
+    tags: ["React", "Express", "MySQL", "Google App Engine", "Hostinger", "Socket.io"],
     url: "https://supersharkz.et.r.appspot.com/",
   },
   {
     title: "Supersharkz",
     images: [app1, app2, app3, app4],
     mobile: true,
-    text: "Parents can manage their account, register for classes, and track their students progress, whilst instructors can manage and monitor their active classes and schedules.",
+    text: "Parents can manage their account, register for classes, and track their students progress, whilst instructors can manage and monitor their active classes and schedules. Available on the iOS App Store and Google Play Store",
     tags: ["React Native", "Expo", "Express", "Socket.io"],
     url: "https://apps.apple.com/us/app/supersharkz/id1578259870?itsct=apps_box_link&itscg=30200",
   },
@@ -344,7 +358,7 @@ const projectsContent = [
   {
     title: "Poker AI",
     images: [pokerApp1],
-    text: "Play 1v1 poker against an AI bot that has played over 1,000,000 random poker games",
+    text: "Play 1v1 poker against an AI bot that has played over 1,000,000 random poker games in this desktop app",
     tags: ["Python", "Kivy", "TensorFlow", "Machine Learning"],
     url: "https://youtu.be/xPMff4euRmI",
   },
@@ -384,6 +398,17 @@ export const contentSections = [
     ),
   },
   {
+    navText: "Projects",
+    text: "Some Things I've Built",
+    content: (
+      <div>
+        {projectsContent.map((project, i) => (
+          <Project project={project} key={i} left={i % 2 !== 0} />
+        ))}
+      </div>
+    ),
+  },
+  {
     navText: "Skills",
     text: "Skills & Interests",
     content: (
@@ -393,17 +418,6 @@ export const contentSections = [
             <h3>{item.title}</h3>
             <Floating content={item.list} />
           </div>
-        ))}
-      </div>
-    ),
-  },
-  {
-    navText: "Projects",
-    text: "Some Things I've Built",
-    content: (
-      <div>
-        {projectsContent.map((project, i) => (
-          <Project project={project} key={i} left={i % 2 !== 0} />
         ))}
       </div>
     ),

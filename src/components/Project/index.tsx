@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { ReactNode, useState } from "react";
 import useResponsive from "../../hooks/useResponsive";
 import styles from "./Project.module.css";
 import astyles from "../HoverDecoration/a.module.css";
@@ -57,7 +57,7 @@ const Project: React.FC<ProjectProps> = ({ project, left }) => {
           <span className={styles.title}>{project.title}</span>
         </a>
         <div className={isLg ? styles.projectText : ""}>
-          <p>{project.text}</p>
+          {typeof project.text === "string" ? <p>{project.text}</p> : (project.text as ReactNode)}
           {project.images.length > 1 && isLg ? (
             <div
               className={`${styles.buttonContainer} ${
