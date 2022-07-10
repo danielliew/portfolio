@@ -5,7 +5,7 @@ import astyles from "../HoverDecoration/a.module.css";
 import { ProjectProps } from "./types";
 import openIcon from "../svg/open.svg";
 import openLightIcon from "../svg/open-light.svg";
-import { openInNewTab } from "../About";
+import { openInNewTab } from "../About/AboutLink";
 
 const Project: React.FC<ProjectProps> = ({ project, left }) => {
   const [pic, setPic] = useState(0);

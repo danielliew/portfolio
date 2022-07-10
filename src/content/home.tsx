@@ -1,6 +1,7 @@
-import styles from "../pages/Home/Home.module.css"
+import astyles from "../components/HoverDecoration/a.module.css"
 
-import About, { openInNewTab } from "../components/About";
+import { openInNewTab } from "../components/About/AboutLink";
+import About from "../components/About";
 import Floating from "../components/Floating";
 import Project from "../components/Project";
 import Tabs from "../components/Tabs";
@@ -30,6 +31,7 @@ import sonarLintLogo from "../components/svg/frameworks/sonarLint.svg";
 import docuSignLogo from "../components/svg/frameworks/docuSign.svg";
 import adobeSignLogo from "../components/svg/frameworks/adobeSign.svg";
 import appSheetLogo from "../components/svg/frameworks/appSheet.svg";
+import figmaLogo from "../components/svg/frameworks/figma.svg";
 
 import fullstack from "../components/svg/areasOI/fullstack.svg";
 import webDev from "../components/svg/areasOI/webDev.svg";
@@ -57,6 +59,21 @@ import dliewPic from "../components/images/dliew.com_.png";
 import cardDeck from "../components/images/cards.png";
 
 const experienceTabContent = [
+  {
+    company: "Zendesk",
+    location: "Los Angeles, San Francisco, Remote",
+    positions: [
+      {
+        jobTitle: "Software Engineering Intern",
+        duration: "June 2022-Present",
+        content: (
+          <div>
+            <p>Working with Team Iris on the Support Suite Engineering team focusing on building frontend React and backend Ruby features for the Agent Workspace Activation. Learning a lot so far!</p>
+          </div>
+        )
+      }
+    ]
+  },
   {
     company: "Supersharkz Swim School",
     location: "Shah Alam, Malaysia",
@@ -275,6 +292,7 @@ const skillsFloatingContent = [
       { logo: <img src={docuSignLogo} alt="DocuSign" />, text: "DocuSign" },
       { logo: <img src={adobeSignLogo} alt="AdobeSign" />, text: "AdobeSign" },
       { logo: <img src={appSheetLogo} alt="AppSheet" />, text: "AppSheet" },
+      { logo: <img src={figmaLogo} alt="Figma" />, text: "Figma" },
     ],
   },
   {
@@ -314,7 +332,7 @@ const projectsContent = [
     title: "Daniel's Premium Card deck",
     images: [cardDeck],
     text: <p>Quick self-promo: I was unsatisfied with online SVG/PNG card decks so I made my own on Figma. Honestly pretty happy with how this turned out so I decided to sell it on Etsy.{" "}
-        <a className={styles.button} href="https://www.etsy.com/shop/theDanielLiewStore" {...openInNewTab}>
+        <a className={astyles.a} href="https://www.etsy.com/shop/theDanielLiewStore" {...openInNewTab}>
           Check out the card deck on Etsy!
         </a>
       </p>,

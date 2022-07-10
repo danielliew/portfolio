@@ -1,5 +1,5 @@
 import React from "react";
-import { openInNewTab } from "../About";
+import { openInNewTab } from "../About/AboutLink";
 import astyles from "../HoverDecoration/a.module.css";
 
 const hrefs = {

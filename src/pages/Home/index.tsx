@@ -9,7 +9,7 @@ import linkedInIcon from "../../components/svg/linkedIn.svg";
 import githubIcon from "../../components/svg/github.svg";
 import emailIcon from "../../components/svg/email.svg";
 import ChineseName from "../../components/ChineseName";
-import { openInNewTab } from "../../components/About";
+import { openInNewTab } from "../../components/About/AboutLink";
 import Navbar from "../../components/Navbar";
 import Qoute from "../../components/Quote";
 

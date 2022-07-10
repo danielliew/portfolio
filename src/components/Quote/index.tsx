@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import styles from "./Qoute.module.css";
 
 const qoutes = [
+  { text: "Hey how's it going?" },
   { text: "Problem solving is a lifestyle." },
   { text: "I like problem solving." },
   { text: "I solve problems." },

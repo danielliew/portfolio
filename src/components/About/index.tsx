@@ -1,23 +1,30 @@
 import React from "react";
-import astyles from "../HoverDecoration/a.module.css";
+import AboutLink from "./AboutLink";
 
-const hrefs = {
-  ijm: "https://www.ijm.com/",
-  ytl: "https://ytl.com/",
-  ictrc: "https://www.ictrc.com.my/",
-  supersharkz: "https://supersharkz.com/",
-};
-
-export const openInNewTab = {
-  target: "_blank",
-  rel: "noreferrer",
+const companiesData = {
+  ijm: {
+    href: "https://www.ijm.com/",
+    color: "#002688"
+  },
+  ytl: {
+    href: "https://ytl.com/",
+    color: "#0E9EDA"
+  },
+  ictrc: {
+    href: "https://www.ictrc.com.my/",
+    color: "#2869a8"
+  },
+  supersharkz: {
+    href: "https://supersharkz.com/",
+    color: "#b2ac5b"
+  },
+  zendesk: {
+    href: "https://www.zendesk.com",
+    color: "#174043"
+  },
 };
 
 const About: React.FC = () => {
-  const aProps = {
-    className: astyles.a,
-    ...openInNewTab,
-  };
   return (
     <div>
       <p>
@@ -35,23 +42,26 @@ const About: React.FC = () => {
         <br />
         <br />
         I've had the priveledge of interning at{" "}
-        <a href={hrefs.ijm} {...aProps}>
+        <AboutLink data={companiesData.ijm}>
           one of Malaysia's leading conglomerates
-        </a>
+        </AboutLink>
         ,{" "}
-        <a href={hrefs.ytl} {...aProps}>
+        <AboutLink data={companiesData.ytl}>
           a multinational cement manufacturer
-        </a>
+        </AboutLink>
         , and{" "}
-        <a href={hrefs.ictrc} {...aProps}>
+        <AboutLink data={companiesData.ictrc}>
           an IT strategy and deployment consultantcy firm
-        </a>
-        . Nowadays, I'm building user-friendly, inclusive, and accessible
+        </AboutLink>
+        . I've also built user-friendly, inclusive, and powerful
         digital experiences at{" "}
-        <a href={hrefs.supersharkz} {...aProps}>
+        <AboutLink data={companiesData.supersharkz}>
           one of Malaysia's largest swim schools
-        </a>
+        </AboutLink>
         .
+        This summer, I'm an intern at one of the <AboutLink data={companiesData.zendesk}>
+          top customer service software providers in the world
+        </AboutLink>.
       </p>
     </div>
   );
