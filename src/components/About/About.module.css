@@ -1,3 +1,66 @@
 .a {
   text-decoration: none !important;
 }
+
+.rollinsImgWrapper {
+  position: relative;
+  margin: 20px 0px;
+}
+
+.rollinsImgWrapper:hover > .rollinsImgWrapper1 > .border {
+  top: 10px;
+  left: 10px;
+}
+
+.rollinsImgWrapper:hover > .rollinsImgWrapper1 > .border1 {
+  top: -10px;
+  left: -10px;
+}
+
+.rollinsImgWrapper1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 15px;
+}
+
+.rollinsLogo {
+  position: absolute;
+  z-index: 7;
+  top: 0;
+  right: 0;
+}
+
+.rollinsImg {
+  min-height: 100%;
+  min-width: 100%;
+  max-width: 70vw;
+  z-index: 5;
+}
+
+.border {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border: 3px solid black;
+  top: -3px;
+  left: -3px;
+  border-radius: 18px;
+  -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all var(--duration) cubic-bezier(0.165, 0.84, 0.44, 1);
+  background-color: #ffc300;
+}
+
+.border1 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border: 3px solid black;
+  top: -3px;
+  left: -3px;
+  border-radius: 18px;
+  -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all var(--duration) cubic-bezier(0.165, 0.84, 0.44, 1);
+  background-color: #2331d2;
+}

@@ -1,5 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
+import { useTransition, animated } from "react-spring";
 import AboutLink from "./AboutLink";
+import astyles from "./About.module.css"
+import rollinsIcon from "../svg/rollins.svg"
+
+import rollins from "../images/rollins college.jpeg"
 
 const companiesData = {
   ijm: {
@@ -25,11 +30,39 @@ const companiesData = {
 };
 
 const About: React.FC = () => {
+
+  const [show, set] = useState(false)
+  const transitions = useTransition(show, {
+    from: { opacity: 0 },
+    enter: { opacity: 1 },
+    leave: { opacity: 0 },
+  })
+
   return (
     <div>
       <p>
         Hello! My name is Daniel and I'm a Junior at Rollins College in the
         picturesque city of Winter Park, FL.
+        <br />
+        <br />
+        <div
+          className={astyles.rollinsImgWrapper}
+          onMouseEnter={() => set(true)}
+          onMouseLeave={() => set(false)}
+        >
+          <div className={astyles.rollinsImgWrapper1}>
+            <div className={astyles.border} />
+            <div className={astyles.border1} />
+            {transitions(
+              (styles, item) => item && <animated.img src={rollinsIcon} alt="rollins-logo" className={astyles.rollinsLogo} style={styles} />
+            )}
+            <img
+              src={rollins}
+              alt="rollins"
+              className={astyles.rollinsImg}
+            />
+          </div>
+        </div>
         <br />
         <br />
         I love building websites and mobile applications that positively impact
@@ -62,6 +95,9 @@ const About: React.FC = () => {
         This summer, I'm an intern at one of the <AboutLink data={companiesData.zendesk}>
           top customer service software providers in the world
         </AboutLink>.
+        <br />
+        <br />
+        Outside anything computer science related, I enjoy playing jazz, swimming, chess, and discovring new places to eat.
       </p>
     </div>
   );

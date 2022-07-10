@@ -6,6 +6,7 @@ import styles from "./Home.module.css";
 import astyles from "../../components/HoverDecoration/a.module.css";
 
 import linkedInIcon from "../../components/svg/linkedIn.svg";
+import instagramIcon from "../../components/svg/instagram.svg";
 import githubIcon from "../../components/svg/github.svg";
 import emailIcon from "../../components/svg/email.svg";
 import ChineseName from "../../components/ChineseName";
@@ -15,6 +16,7 @@ import Qoute from "../../components/Quote";
 
 const hrefs = {
   linkedin: "https://www.linkedin.com/in/daniel-liew/",
+  instagram: "https://www.instagram.com/danielliewjh/",
   github: "https://github.com/danielliew",
   mail: "mailto::danieliewjh@gmail.com",
 };
@@ -25,6 +27,11 @@ export const SideList: React.FC = () => {
       <li>
         <a href={hrefs.linkedin} {...openInNewTab}>
           <img src={linkedInIcon} alt="linkedIn" />
+        </a>
+      </li>
+      <li>
+        <a href={hrefs.instagram} {...openInNewTab}>
+          <img src={instagramIcon} alt="instagram" />
         </a>
       </li>
       <li>
@@ -97,7 +104,7 @@ const Home: React.FC = () => {
               <small className={styles.small}>
                 Designed and built by Daniel Liew
               </small>
-              <small className={styles.small}>Nov 2021</small>
+              <small className={styles.small}>Jul 2022</small>
               <small
                 className={`${styles.small} ${astyles.a}`}
                 onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
