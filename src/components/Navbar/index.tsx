@@ -133,13 +133,21 @@ const Navbar: React.FC<{
 
   useChain([menuSpringRef, hSpringRef]);
 
+  const [logoState, setLogoState] = useState(false);
+  const logoStyles = useSpring({
+    transform: logoState ? "rotate(0deg)" : "rotate(360deg"
+  })
+
   return (
     <nav className={styles.navbar}>
       <div
         className={`${styles["logo-container"]} ${astyles.a}`}
-        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+        onClick={() => {
+          window.scrollTo({ top: 0, behavior: "smooth" })
+          setLogoState(s=>!s)
+        }}
       >
-        <img src={logo} alt="D" />
+        <animated.img src={logo} alt="D" style={logoStyles} />
       </div>
 
       <div />

@@ -1,0 +1,14 @@
+/* container */
+.container {
+  padding: 0px 20vw;
+}
+
+/* top header */
+.header {
+  padding-top: 20vh !important;
+}
+
+section {
+  display: block;
+  padding-bottom: 50px;
+}

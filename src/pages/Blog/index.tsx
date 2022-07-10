@@ -7,8 +7,13 @@ import styles from "./Blog.module.css";
 import astyles from "../../components/HoverDecoration/a.module.css";
 import dstyles from "../../components/HoverDecoration/dot.module.css";
 import { blogPostType } from "./types";
+import { useNavigate } from "react-router-dom";
 
-const pageTotal = 10;
+const pageTotal = 5;
+
+export const importImageDynamic = async (dir: string) => {
+  return (await import(`../../content/blogPosts/${dir}/cover.png`)).default
+}
 
 const FilterBtn: React.FC<{
   text: string;
@@ -58,14 +63,27 @@ const Blog: React.FC = () => {
     setLoading(false);
   };
 
+  const [blogImgs, setBlogImgs] = useState<{[any: string]: string}>({});
+
   useEffect(() => {
     (async () => {
       getBlogPosts(0, 0);
+
+      for (let post of blogPosts) {
+        let img = await importImageDynamic(post.dir)
+        setBlogImgs((b) => ({
+          ...b,
+          [post.dir]: img
+        }))
+      }
     })();
     // eslint-disable-next-line
   }, []);
 
   const isLg = useResponsive();
+
+  const navigate = useNavigate()
+  const goToBlog = (dir : string) => navigate(`/blogs/${dir}`)
 
   return (
     <div>
@@ -113,19 +131,20 @@ const Blog: React.FC = () => {
                       <p className={styles.postDesc}>{post.description}</p>
                       <picture className={styles.postPic}>
                         <img
+                          onClick={() => goToBlog(post.dir)}
                           className={`${styles.postImg} ${
                             !isLg ? styles["postImg-responsive"] : ""
                           }`}
-                          src={post.image}
+                          src={blogImgs[post.dir]}
                           alt="preview"
                         />
                       </picture>
-                      <a
+                      <p
                         className={`${styles.postReadMore} ${astyles.a}`}
-                        href="/blog"
+                        onClick={() => goToBlog(post.dir)}
                       >
                         Read more
-                      </a>
+                      </p>
                     </article>
                   );
                 })}
@@ -150,6 +169,7 @@ const Blog: React.FC = () => {
             ) : null}
             {new Array(totalPages).fill(0).map((x, i) => (
               <button
+                key={i}
                 onClick={() => onPage(i)}
                 className={`${astyles.a} ${styles.numbering} ${
                   page === i ? styles.currPage : ""

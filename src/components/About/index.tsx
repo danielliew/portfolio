@@ -45,24 +45,26 @@ const About: React.FC = () => {
         picturesque city of Winter Park, FL.
         <br />
         <br />
-        <div
-          className={astyles.rollinsImgWrapper}
-          onMouseEnter={() => set(true)}
-          onMouseLeave={() => set(false)}
-        >
-          <div className={astyles.rollinsImgWrapper1}>
-            <div className={astyles.border} />
-            <div className={astyles.border1} />
-            {transitions(
-              (styles, item) => item && <animated.img src={rollinsIcon} alt="rollins-logo" className={astyles.rollinsLogo} style={styles} />
-            )}
-            <img
-              src={rollins}
-              alt="rollins"
-              className={astyles.rollinsImg}
-            />
-          </div>
+      </p>
+      <div
+        className={astyles.rollinsImgWrapper}
+        onMouseEnter={() => set(true)}
+        onMouseLeave={() => set(false)}
+      >
+        <div className={astyles.rollinsImgWrapper1}>
+          <div className={astyles.border} />
+          <div className={astyles.border1} />
+          {transitions(
+            (styles, item) => item && <animated.img src={rollinsIcon} alt="rollins-logo" className={astyles.rollinsLogo} style={styles} />
+          )}
+          <img
+            src={rollins}
+            alt="rollins"
+            className={astyles.rollinsImg}
+          />
         </div>
+      </div>
+      <p>
         <br />
         <br />
         I love building websites and mobile applications that positively impact

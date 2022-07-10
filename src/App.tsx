@@ -1,7 +1,9 @@
 import React, { lazy, Suspense } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import PageLoader from "./components/PageLoader";
 import Blog from "./pages/Blog";
+import BlogPage from "./pages/BlogPage";
+import NotFound from "./pages/NotFound";
 
 const Home = lazy(() => import("./pages/Home"));
 
@@ -18,11 +20,33 @@ const App: React.FC = () => {
           }
         />
         <Route
+          path="/wtf"
+          element={
+            <Suspense fallback={<PageLoader />}>
+              <NotFound />
+            </Suspense>
+          }
+        />
+        <Route
           path="/blog"
           element={
             <Suspense fallback={<PageLoader />}>
               <Blog />
             </Suspense>
+          }
+        />
+        <Route
+          path="/blogs/:blog_id"
+          element={
+            <Suspense fallback={<PageLoader />}>
+              <BlogPage />
+            </Suspense>
+          }
+        />
+        <Route
+          path="/*"
+          element={
+            <Navigate to="/wtf" />
           }
         />
       </Routes>

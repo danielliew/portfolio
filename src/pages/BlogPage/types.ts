@@ -1,10 +1,7 @@
-
-export type blogType = {
+export type blogPostType = {
   title: string;
   type: string;
   description: string;
   date: string;
   dir: string;
-}
-
-export type blogPostType = blogType[];
+}[];
