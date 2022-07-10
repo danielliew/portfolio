@@ -5,6 +5,7 @@ export type blogType = {
   description: string;
   date: string;
   dir: string;
+  url: string;
 }
 
 export type blogPostType = blogType[];

@@ -13,6 +13,7 @@ import ChineseName from "../../components/ChineseName";
 import { openInNewTab } from "../../components/About/AboutLink";
 import Navbar from "../../components/Navbar";
 import Qoute from "../../components/Quote";
+import Name from "../../components/Name";
 
 const hrefs = {
   linkedin: "https://www.linkedin.com/in/daniel-liew/",
@@ -50,7 +51,6 @@ export const SideList: React.FC = () => {
 
 const Home: React.FC = () => {
   const isLg = useResponsive();
-
   return (
     <div>
       <Navbar
@@ -73,7 +73,7 @@ const Home: React.FC = () => {
           <section className={styles["top-section"]}>
             <div>
               <p className={styles["top-pretext"]}>Hi, my name is</p>
-              <h1 className={styles["top-title"]}>Daniel Liew</h1>
+              <Name />
               <div className={styles["top-posttext"]}>
                 <ChineseName />
                 <Qoute />

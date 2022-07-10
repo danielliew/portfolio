@@ -83,7 +83,7 @@ const Blog: React.FC = () => {
   const isLg = useResponsive();
 
   const navigate = useNavigate()
-  const goToBlog = (dir : string) => navigate(`/blogs/${dir}`)
+  const goToBlog = (url : string) => navigate(`/blogs/${url}`)
 
   return (
     <div>
@@ -131,7 +131,7 @@ const Blog: React.FC = () => {
                       <p className={styles.postDesc}>{post.description}</p>
                       <picture className={styles.postPic}>
                         <img
-                          onClick={() => goToBlog(post.dir)}
+                          onClick={() => goToBlog(post.url)}
                           className={`${styles.postImg} ${
                             !isLg ? styles["postImg-responsive"] : ""
                           }`}
@@ -141,7 +141,7 @@ const Blog: React.FC = () => {
                       </picture>
                       <p
                         className={`${styles.postReadMore} ${astyles.a}`}
-                        onClick={() => goToBlog(post.dir)}
+                        onClick={() => goToBlog(post.url)}
                       >
                         Read more
                       </p>

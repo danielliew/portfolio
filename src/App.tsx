@@ -1,5 +1,6 @@
 import React, { lazy, Suspense } from "react";
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import Cursor from "./components/Cursor";
 import PageLoader from "./components/PageLoader";
 import Blog from "./pages/Blog";
 import BlogPage from "./pages/BlogPage";
@@ -10,6 +11,7 @@ const Home = lazy(() => import("./pages/Home"));
 const App: React.FC = () => {
   return (
     <Router>
+      <Cursor />
       <Routes>
         <Route
           path="/"

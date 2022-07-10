@@ -25,6 +25,7 @@ const MainBlog = ({
     description: "",
     date: "",
     dir: "",
+    url: "",
   });
 
   const isLg = useResponsive();
@@ -40,7 +41,7 @@ const MainBlog = ({
   useEffect(() => {
     let error = false;
     try {
-      const findBlog = blogPosts.filter(b => b.dir === blog_id)
+      const findBlog = blogPosts.filter(b => b.url === blog_id)
       if (findBlog.length) {
         const [foundBlog] = findBlog
         setBlog(foundBlog);
