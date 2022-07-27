@@ -1,5 +1,5 @@
 :root {
-  --duration: 0.15s;
+  --duration: 0.3s;
   --hoverTransition: 150ms cubic-bezier(0.215, 0.61, 0.355, 1);
   --arrowSpacing: 5px;
   --arrowHoverTransition: var(--duration) cubic-bezier(0.215, 0.61, 0.355, 1);

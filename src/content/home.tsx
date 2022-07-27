@@ -54,8 +54,10 @@ import app4 from "../components/images/supersharkz/app4.png";
 import ijmWeb1 from "../components/images/ijm/web1.png";
 import ijmApp1 from "../components/images/ijm/app1.jpg";
 import pokerApp1 from "../components/images/poker/app1.png";
+import pokerApp2 from "../components/images/poker/app2.png";
 import devopsGh1 from "../components/images/ytl/gh1.png";
-import dliewPic from "../components/images/dliew.com_.png";
+import dliew1Pic from "../components/images/dliew/dliew.com1.png";
+import dliew2Pic from "../components/images/dliew/dliew.com2.png";
 import cardDeck from "../components/images/cards.png";
 
 const experienceTabContent = [
@@ -350,7 +352,7 @@ const projectsContent = [
     title: "Supersharkz",
     images: [app1, app2, app3, app4],
     mobile: true,
-    text: "Parents can manage their account, register for classes, and track their students progress, whilst instructors can manage and monitor their active classes and schedules. Available on the iOS App Store and Google Play Store",
+    text: "A mobile app for parents to manage their students, register students in classes, and track their progress. Instructors can manage and monitor their active classes and schedules. Available on the iOS App Store and Google Play Store",
     tags: ["React Native", "Expo", "Express", "Socket.io"],
     url: "https://apps.apple.com/us/app/supersharkz/id1578259870?itsct=apps_box_link&itscg=30200",
   },
@@ -375,9 +377,22 @@ const projectsContent = [
   },
   {
     title: "Poker AI",
-    images: [pokerApp1],
-    text: "Play 1v1 poker against an AI bot that has played over 1,000,000 random poker games in this desktop app",
-    tags: ["Python", "Kivy", "TensorFlow", "Machine Learning"],
+    images: [pokerApp1, pokerApp2],
+    text: (
+      <p>
+        My A-Level Computer Science final project. A 1v1 poker desktop game
+        against an AI bot that has played 1,000,000 poker games. I wrote a paper
+        documenting my game design and process building and training the AI.{" "}
+        <a
+          className={astyles.a}
+          href="https://docs.google.com/document/d/1tGRpGCPNYvv40YYqBUqg1W0TrMaHfN2104wEdEXOphQ/edit?usp=sharing"
+          {...openInNewTab}
+        >
+          Read the paper here
+        </a> and follow the link below to watch a walkthrough.
+      </p>
+    ),
+    tags: ["Python", "Kivy", "TensorFlow", "Machine Learning/AI", "Academic Research Paper"],
     url: "https://youtu.be/xPMff4euRmI",
   },
   {
@@ -389,7 +404,7 @@ const projectsContent = [
   },
   {
     title: "Portfolio",
-    images: [dliewPic],
+    images: [dliew1Pic, dliew2Pic],
     text: "The website you're currently on. A collection of my work, experiences and stuff.",
     tags: ["React", "Google App Engine", "TypeScript", "CSS", "UI/UX design"],
     url: "https://github.com/danielliew/portfolio",
@@ -399,7 +414,7 @@ const projectsContent = [
     images: [cardDeck],
     text: (
       <p>
-        Quick self-promo: I was unsatisfied with online SVG/PNG card decks so I
+        I was unsatisfied with online SVG/PNG card decks so I
         made my own on Figma. Pretty happy with how this turned out so if you
         ever need a digital card deck, get it from{" "}
         <a
@@ -407,7 +422,7 @@ const projectsContent = [
           href="https://www.etsy.com/shop/theDanielLiewStore"
           {...openInNewTab}
         >
-          my store on Etsy!
+          my store on Etsy.
         </a>
       </p>
     ),
