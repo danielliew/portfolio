@@ -1,4 +1,4 @@
-import astyles from "../components/HoverDecoration/a.module.css"
+import astyles from "../components/HoverDecoration/a.module.css";
 
 import { openInNewTab } from "../components/About/AboutLink";
 import About from "../components/About";
@@ -68,11 +68,15 @@ const experienceTabContent = [
         duration: "June 2022-Present",
         content: (
           <div>
-            <p>Working with Team Iris on the Support Suite Engineering team focusing on building frontend React and backend Ruby features for the Agent Workspace Activation. Learning a lot so far!</p>
+            <p>
+              Working with Team Iris on the Support Suite Engineering team
+              focusing on building frontend React and backend Ruby features for
+              the Agent Workspace Activation. Learning a lot so far!
+            </p>
           </div>
-        )
-      }
-    ]
+        ),
+      },
+    ],
   },
   {
     company: "Supersharkz Swim School",
@@ -329,21 +333,17 @@ const skillsFloatingContent = [
 
 const projectsContent = [
   {
-    title: "Daniel's Premium Card deck",
-    images: [cardDeck],
-    text: <p>Quick self-promo: I was unsatisfied with online SVG/PNG card decks so I made my own on Figma. Honestly pretty happy with how this turned out so I decided to sell it on Etsy.{" "}
-        <a className={astyles.a} href="https://www.etsy.com/shop/theDanielLiewStore" {...openInNewTab}>
-          Check out the card deck on Etsy!
-        </a>
-      </p>,
-    tags: ["Figma", "Frontend", "Graphic Design"],
-    url: "https://www.etsy.com/shop/theDanielLiewStore",
-  },
-  {
     title: "Supersharkz.com",
     images: [web1, web2, web3, web4],
     text: "A professional website, swim school admin portal, instructor portal, and parent portal - all in one React app. Powered by an ExpressJS server, a socket.io realtime microservice, and MySQL database.",
-    tags: ["React", "Express", "MySQL", "Google App Engine", "Hostinger", "Socket.io"],
+    tags: [
+      "React",
+      "Express",
+      "MySQL",
+      "Google App Engine",
+      "Hostinger",
+      "Socket.io",
+    ],
     url: "https://supersharkz.et.r.appspot.com/",
   },
   {
@@ -393,6 +393,26 @@ const projectsContent = [
     text: "The website you're currently on. A collection of my work, experiences and stuff.",
     tags: ["React", "Google App Engine", "TypeScript", "CSS", "UI/UX design"],
     url: "https://github.com/danielliew/portfolio",
+  },
+  {
+    title: "svg card deck",
+    images: [cardDeck],
+    text: (
+      <p>
+        Quick self-promo: I was unsatisfied with online SVG/PNG card decks so I
+        made my own on Figma. Pretty happy with how this turned out so if you
+        ever need a digital card deck, get it from{" "}
+        <a
+          className={astyles.a}
+          href="https://www.etsy.com/shop/theDanielLiewStore"
+          {...openInNewTab}
+        >
+          my store on Etsy!
+        </a>
+      </p>
+    ),
+    tags: ["Figma", "Frontend", "Graphic Design"],
+    url: "https://www.etsy.com/shop/theDanielLiewStore",
   },
 ];
 
