@@ -13,10 +13,12 @@ const Tabs: React.FC<TabProps> = ({ tabs }) => {
         {tabs.map((item, i) => (
           <button
             key={i}
-            className={`${styles.button} ${current === i && styles.bactive}`}
+            className={`${styles.button} ${!isLg ? styles.respbutton : ""} ${
+              current === i && styles.bactive
+            }`}
             onClick={() => setCurrent(i)}
           >
-            {item.company}
+            {!isLg ? item.company : <h3>{item.company}</h3>}
             <small className={styles.small}>{item.location}</small>
           </button>
         ))}
