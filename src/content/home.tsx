@@ -6,6 +6,7 @@ import Floating from "../components/Floating";
 import Project from "../components/Project";
 import Tabs from "../components/Tabs";
 import Contact from "../components/Contact";
+import { ProjectProps } from "../components/Project/types";
 
 import pythonLogo from "../components/svg/lang/python.svg";
 import javascriptLogo from "../components/svg/lang/javascript.svg";
@@ -15,6 +16,7 @@ import cssLogo from "../components/svg/lang/css.svg";
 import sqlLogo from "../components/svg/lang/sql.svg";
 import javaLogo from "../components/svg/lang/java.svg";
 import cLogo from "../components/svg/lang/c.svg";
+import rubyLogo from "../components/images/ruby.jpeg";
 
 import reactLogo from "../components/svg/frameworks/react.svg";
 import reactNativeLogo from "../components/svg/frameworks/reactNative.svg";
@@ -32,6 +34,7 @@ import docuSignLogo from "../components/svg/frameworks/docuSign.svg";
 import adobeSignLogo from "../components/svg/frameworks/adobeSign.svg";
 import appSheetLogo from "../components/svg/frameworks/appSheet.svg";
 import figmaLogo from "../components/svg/frameworks/figma.svg";
+import rubyOnRailsLogo from "../components/images/rubyOnRails.png";
 
 import fullstack from "../components/svg/areasOI/fullstack.svg";
 import webDev from "../components/svg/areasOI/webDev.svg";
@@ -59,6 +62,9 @@ import devopsGh1 from "../components/images/ytl/gh1.png";
 import dliew1Pic from "../components/images/dliew/dliew.com1.png";
 import dliew2Pic from "../components/images/dliew/dliew.com2.png";
 import cardDeck from "../components/images/cards.png";
+import z1 from "../components/images/zendesk-ticket-viewer/z1.png";
+import z2 from "../components/images/zendesk-ticket-viewer/z2.png";
+import rockets from "../components/images/rockets.png";
 
 const experienceTabContent = [
   {
@@ -241,6 +247,10 @@ const skillsFloatingContent = [
         text: "TypeScript",
       },
       {
+        logo: <img src={rubyLogo} alt="ruby" />,
+        text: "Ruby",
+      },
+      {
         logo: <img src={htmlLogo} alt="html" />,
         text: "HTML",
       },
@@ -276,6 +286,10 @@ const skillsFloatingContent = [
       {
         logo: <img src={gaLogo} alt="GitHub Actions" />,
         text: "GitHub Actions",
+      },
+      {
+        logo: <img src={rubyOnRailsLogo} alt="Ruby On Rails" />,
+        text: "Ruby On Rails",
       },
       { logo: <img src={dockerLogo} alt="Docker" />, text: "Docker" },
       {
@@ -333,7 +347,30 @@ const skillsFloatingContent = [
   },
 ];
 
-const projectsContent = [
+const projectLinkStyle = {
+  backgroundColor: "#eefff0",
+  padding: 1,
+  borderRadius: 3,
+  marginTop: 2,
+  marginBottom: 2,
+}
+
+const projectsContent: ProjectProps["project"][] = [
+  {
+    title: "Zendesk Ticket Viewer",
+    images: [z1, z2],
+    text: "A ticket viewer for a Zendesk Support instance. Connects to Zendesk's developer API via an OAuth token in the backend and displays the information in a frontend",
+    tags: [
+      "React",
+      "TypeScript",
+      "Express",
+      "Jest",
+      "React Testing Library",
+      "Full stack",
+    ],
+    url: "https://github.com/danielliew/zendesk-ticket-viewer",
+    year: 2022
+  },
   {
     title: "Supersharkz.com",
     images: [web1, web2, web3, web4],
@@ -345,22 +382,33 @@ const projectsContent = [
       "Google App Engine",
       "Hostinger",
       "Socket.io",
+      "Full stack",
     ],
     url: "https://supersharkz.et.r.appspot.com/",
+    year: 2020
   },
   {
-    title: "Supersharkz",
+    title: "Supersharkz Mobile App",
     images: [app1, app2, app3, app4],
     mobile: true,
     text: "A mobile app for parents to manage their students, register students in classes, and track their progress. Instructors can manage and monitor their active classes and schedules. Available on the iOS App Store and Google Play Store",
-    tags: ["React Native", "Expo", "Express", "Socket.io"],
+    tags: ["React Native", "Expo", "Express", "Socket.io", "Mobile App"],
     url: "https://apps.apple.com/us/app/supersharkz/id1578259870?itsct=apps_box_link&itscg=30200",
+    year: 2020
   },
   {
     title: "IJM Land Calendar Booking",
     images: [ijmWeb1],
     text: "An online booking system allowing agencies to book time slots for visitor show unit tours to minimize social gathering during the COVID-19 pandemic",
-    tags: ["React", "Google Sheets", "Google Calendar", "Express", "AppSheet"],
+    tags: [
+      "React",
+      "Google Sheets",
+      "Google Calendar",
+      "Express",
+      "AppSheet",
+      "iframe",
+    ],
+    year: 2020
   },
   {
     title: "IJM COVID-19 Monitoring",
@@ -374,6 +422,7 @@ const projectsContent = [
       "Express",
       "AppSheet",
     ],
+    year: 2020
   },
   {
     title: "Poker AI",
@@ -381,19 +430,33 @@ const projectsContent = [
     text: (
       <p>
         My A-Level Computer Science final project. A 1v1 poker desktop game
-        against an AI bot that has played 1,000,000 poker games. I wrote a paper
-        documenting my game design and process building and training the AI.{" "}
+        against an AI bot that has played 1,000,000 poker games. The game
+        included an accurate hand-strength recognition and ranking algorithm. I
+        wrote a paper documenting my game design and process building and
+        training the AI.{" "}
         <a
           className={astyles.a}
           href="https://docs.google.com/document/d/1tGRpGCPNYvv40YYqBUqg1W0TrMaHfN2104wEdEXOphQ/edit?usp=sharing"
           {...openInNewTab}
+          style={{
+            ...projectLinkStyle
+          }}
         >
           Read the paper here
-        </a> and follow the link below to watch a walkthrough.
+        </a>{" "}
+        and follow the link below to watch a walkthrough.
       </p>
     ),
-    tags: ["Python", "Kivy", "TensorFlow", "Machine Learning/AI", "Academic Research Paper"],
+    tags: [
+      "Python",
+      "Kivy",
+      "TensorFlow",
+      "Machine Learning",
+      "AI",
+      "Academic Research Paper",
+    ],
     url: "https://youtu.be/xPMff4euRmI",
+    year: 2019
   },
   {
     title: "DevOps Exploration",
@@ -401,25 +464,46 @@ const projectsContent = [
     text: "A research repository containing several mini-projects demonstrating Agile methodology and Devops best practices",
     tags: ["git", "Docker", "Kubernetes", "Github Actions", "Agile"],
     url: "https://github.com/danielliew/devops-test",
+    year: 2021
+  },
+  {
+    title: "Rockets Database",
+    images: [rockets],
+    text: "A database project where we modelled private spaceflight companies and their rockets. Created scripts to create the database structure, populate the database, and wrote complex test database queries to simulate a real-world situation.",
+    tags: ["MySQL", "Database Schema", "Database Queries"],
+    url: "https://github.com/danielliew/devops-test",
+    year: 2022
   },
   {
     title: "Portfolio",
     images: [dliew1Pic, dliew2Pic],
     text: "The website you're currently on. A collection of my work, experiences and stuff.",
-    tags: ["React", "Google App Engine", "TypeScript", "CSS", "UI/UX design"],
+    tags: [
+      "React",
+      "Google App Engine",
+      "TypeScript",
+      "CSS",
+      "UI/UX design",
+      "Portfolio",
+      "Blog",
+    ],
     url: "https://github.com/danielliew/portfolio",
+    year: 2021
   },
   {
     title: "svg card deck",
     images: [cardDeck],
     text: (
       <p>
-        I was unsatisfied with online SVG/PNG card decks so I
-        made my own on Figma. Pretty happy with how this turned out so if you
-        ever need a digital card deck, get it from{" "}
+        I was unsatisfied with online SVG/PNG card decks so I made my own on
+        Figma. Pretty happy with how this turned out so if you ever need a
+        digital card deck, get it from{" "}
         <a
           className={astyles.a}
           href="https://www.etsy.com/shop/theDanielLiewStore"
+          style={{
+            ...projectLinkStyle
+          }}
           {...openInNewTab}
         >
           my store on Etsy.
@@ -428,6 +512,7 @@ const projectsContent = [
     ),
     tags: ["Figma", "Frontend", "Graphic Design"],
     url: "https://www.etsy.com/shop/theDanielLiewStore",
+    year: 2022
   },
 ];
 

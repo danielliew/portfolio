@@ -12,8 +12,8 @@ import { useNavigate } from "react-router-dom";
 const pageTotal = 5;
 
 export const importImageDynamic = async (dir: string) => {
-  return (await import(`../../content/blogPosts/${dir}/cover.png`)).default
-}
+  return (await import(`../../content/blogPosts/${dir}/cover.png`)).default;
+};
 
 const FilterBtn: React.FC<{
   text: string;
@@ -63,18 +63,18 @@ const Blog: React.FC = () => {
     setLoading(false);
   };
 
-  const [blogImgs, setBlogImgs] = useState<{[any: string]: string}>({});
+  const [blogImgs, setBlogImgs] = useState<{ [any: string]: string }>({});
 
   useEffect(() => {
     (async () => {
       getBlogPosts(0, 0);
 
       for (let post of blogPosts) {
-        let img = await importImageDynamic(post.dir)
+        let img = await importImageDynamic(post.dir);
         setBlogImgs((b) => ({
           ...b,
-          [post.dir]: img
-        }))
+          [post.dir]: img,
+        }));
       }
     })();
     // eslint-disable-next-line
@@ -82,8 +82,8 @@ const Blog: React.FC = () => {
 
   const isLg = useResponsive();
 
-  const navigate = useNavigate()
-  const goToBlog = (url : string) => navigate(`/blogs/${url}`)
+  const navigate = useNavigate();
+  const goToBlog = (url: string) => navigate(`/blogs/${url}`);
 
   return (
     <div>
@@ -91,7 +91,7 @@ const Blog: React.FC = () => {
       <div className={styles.container}>
         <section className={styles.header}>
           <h1>Welcome to the blog</h1>
-          <p>I might use this to post some cool articles</p>
+          <p>What's a personal website without a blog section</p>
         </section>
 
         <section>
@@ -127,11 +127,16 @@ const Blog: React.FC = () => {
                     >
                       <small className={styles.postType}>{post.type}</small>
                       <small className={styles.postDate}>{post.date}</small>
-                      <h2 className={styles.postTitle}>{post.title}</h2>
+                      <h2
+                        className={`${styles.postTitle} ${astyles.a}`}
+                        onClick={() => goToBlog(post.url)}
+                      >
+                        {post.title}
+                      </h2>
+                      <small className={styles.postAuthor}>{post.author}</small>
                       <p className={styles.postDesc}>{post.description}</p>
                       <picture className={styles.postPic}>
                         <img
-                          onClick={() => goToBlog(post.url)}
                           className={`${styles.postImg} ${
                             !isLg ? styles["postImg-responsive"] : ""
                           }`}

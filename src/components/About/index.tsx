@@ -41,7 +41,7 @@ const About: React.FC = () => {
   return (
     <div>
       <p>
-        Hello! My name is Daniel and I'm a Junior at Rollins College in the
+        Hello! My name is Daniel and I'm a rising Senior at Rollins College in the
         picturesque city of Winter Park, FL.
         <br />
         <br />
@@ -72,8 +72,8 @@ const About: React.FC = () => {
         taken a keen interest towards problem solving and creative thinking.
         From building elegant and powerful frontend designs to complex and
         functional backend APIs, I want to use programming as a creative medium
-        for bringing purposeful ideas to fruition. I like to build, design, and
-        engineer digital experiences.
+        for bringing purposeful ideas to fruition. I enjoy building, designing, and
+        engineering digital experiences.
         <br />
         <br />
         I've had the priveledge of interning at{" "}
@@ -99,7 +99,7 @@ const About: React.FC = () => {
         </AboutLink>.
         <br />
         <br />
-        Outside anything computer science related, I enjoy playing jazz, swimming, chess, and discovring new places to eat.
+        Outside anything computer science related, I enjoy playing jazz, swimming, chess, and discovering new places to eat.
       </p>
     </div>
   );

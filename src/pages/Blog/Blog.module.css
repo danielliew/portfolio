@@ -72,10 +72,11 @@ section {
   margin-top: 75px;
   display: grid;
   grid-template-areas:
-    "type date"
-    "title title"
-    "desc pic"
-    "readmore pic";
+    "type type type date"
+    "title title title author"
+    "desc desc pic pic"
+    "readmore readmore pic pic"
+    ". . pic pic";
   grid-template-columns: repeat(2, 1fr);
   justify-items: flex-start;
   align-items: flex-start;
@@ -87,6 +88,7 @@ section {
   grid-template-areas:
     "type"
     "title"
+    "author"
     "date"
     "pic"
     "desc"
@@ -100,6 +102,10 @@ section {
 }
 .postTitle {
   grid-area: title;
+  margin: 0px;
+}
+.postAuthor {
+  grid-area: author;
   margin: 0px;
 }
 .postDate {

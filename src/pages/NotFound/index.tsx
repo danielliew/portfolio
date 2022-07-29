@@ -12,7 +12,7 @@ const NotFound: React.FC = () => {
       />
     <div className={styles.container}>
       <section className={styles.header}>
-        <p>404, the page your looking for doesn't exist</p>
+        <p>404, the page you're looking for doesn't exist</p>
 
         <p>
           <span className={pstyles.button} onClick={() => navigate("/")}>Back to Portfolio</span>

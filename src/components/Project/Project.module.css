@@ -37,15 +37,20 @@
   grid-column: 1 / 13;
   z-index: var(--content-z);
   background-color: rgba(0, 0, 0, 0.639);
-  backdrop-filter: blur(3px);
+  backdrop-filter: blur(30px);
   padding: 25px 30px;
   border-radius: var(--radius);
-  color: white;
+  color: white !important;
 }
 
 .title {
   margin-bottom: 20px;
   display: block;
+}
+
+.year {
+  display: block;
+  margin-top: 3px;
 }
 
 .a {

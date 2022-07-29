@@ -9,53 +9,43 @@ export const blogNavbar = [
 ];
 
 const filtersType = {
-  "All": "All",
+  All: "All",
   "Computer Science": "Computer Science",
-  "Music": "Music",
-  "Other": "Other",
-}
+  Music: "Music",
+  Other: "Other",
+};
 
-export const filters = Object.keys(filtersType).map(k => ({ text: k }))
+export const filters = Object.keys(filtersType).map((k) => ({ text: k }));
 
+const temp = {
+  type: "Other",
+  title: "Test Other",
+  description: "These test blogs fill up pages to test pagination.",
+  author: "Daniel",
+  date: "November 9, 2021",
+  dir: "b_2",
+  url: "other-blog",
+};
 
-const temp = [
+export const blogPosts: blogPostType = [
   {
     type: "Computer Science",
-    title: "Test cs",
+    title: "How I built my portfolio website",
     description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
-    date: "November 9, 2021",
-    dir: "b_0",
-    url: "computer-science-test-blog"
-  },
-  {
-    type: "Music",
-    title: "Test music",
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+      "The steps and inspirations I took when creating this website.",
+    author: "Daniel",
     date: "November 9, 2021",
     dir: "b_1",
-    url: "music-test-blog"
+    url: "how-i-built-my-portfolio-website",
   },
-  {
-    type: "Other",
-    title: "Test Other",
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
-    date: "November 9, 2021",
-    dir: "b_2",
-    url: "other-blog"
-  },
-]
-export const blogPosts : blogPostType = [
-  ...temp,
-  ...temp,
-  ...temp,
-  ...temp,
-  ...temp,
-  ...temp,
-  ...temp,
-  ...temp,
-  ...temp,
-  ...temp,
+  temp,
+  temp,
+  temp,
+  temp,
+  temp,
+  temp,
+  temp,
+  temp,
+  temp,
+  temp,
 ];

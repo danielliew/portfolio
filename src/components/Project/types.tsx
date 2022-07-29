@@ -8,6 +8,7 @@ export interface ProjectProps {
     tags: string[];
     mobile?: boolean;
     url?: string;
+    year?: number
   };
   left?: boolean;
 }

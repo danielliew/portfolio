@@ -1,6 +1,6 @@
 # Test blog
 
-This is a test blog post for the "other category"
+This is a test blog post
 
 ## What is Lorem Ipsum?
 

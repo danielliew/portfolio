@@ -47,6 +47,7 @@ const Project: React.FC<ProjectProps> = ({ project, left }) => {
             : styles["content-responsive"]
         }
       >
+        <div className={styles.title}>
         <a
           className={`${styles.a} ${astyles.a} ${
             isLg ? "" : styles["a-responsive"]
@@ -54,10 +55,16 @@ const Project: React.FC<ProjectProps> = ({ project, left }) => {
           href={project.url || "/"}
           {...openInNewTab}
         >
-          <span className={styles.title}>{project.title}</span>
+          {project.title}
         </a>
+        <small className={styles.year}>{project.year}</small>
+        </div>
         <div className={isLg ? styles.projectText : ""}>
-          {typeof project.text === "string" ? <p>{project.text}</p> : (project.text as ReactNode)}
+          {typeof project.text === "string" ? (
+            <p>{project.text}</p>
+          ) : (
+            (project.text as ReactNode)
+          )}
           {project.images.length > 1 && isLg ? (
             <div
               className={`${styles.buttonContainer} ${
@@ -72,11 +79,13 @@ const Project: React.FC<ProjectProps> = ({ project, left }) => {
               </button>
             </div>
           ) : null}
-        </div>
-        <div
-          className={`${styles.tags} ${(left || !isLg) && styles["tags-left"]}`}
-        >
-          <small>{project.tags.join(" ・ ")}</small>
+          <div
+            className={`${styles.tags} ${
+              (left || !isLg) && styles["tags-left"]
+            }`}
+          >
+            <small>{project.tags.join(" ・ ")}</small>
+          </div>
         </div>
 
         {project.url ? (

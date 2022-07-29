@@ -23,6 +23,7 @@ const MainBlog = ({
     title: "",
     type: "",
     description: "",
+    author: "",
     date: "",
     dir: "",
     url: "",

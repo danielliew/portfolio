@@ -24,7 +24,8 @@ const AboutLink = ({
         borderRadius: 3,
         padding: 1,
         backgroundColor: mouseEntered ? data.color : "white",
-        color: mouseEntered ? "white" : data.color
+        color: mouseEntered ? "white" : data.color,
+        display: "inline"
     });
 
     return (

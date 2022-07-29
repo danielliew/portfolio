@@ -23,6 +23,7 @@ const Tabs: React.FC<TabProps> = ({ tabs }) => {
           </button>
         ))}
       </div>
+      {/* timeline thing */}
       <div>
         {company.positions.map((item, i) => (
           <div key={i} className={styles["position-timeline"]}>
