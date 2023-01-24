@@ -9,6 +9,7 @@ export interface ProjectProps {
     mobile?: boolean;
     url?: string;
     year?: number
+    id?: string
   };
   left?: boolean;
 }

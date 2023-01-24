@@ -65,6 +65,7 @@ import cardDeck from "../components/images/cards.png";
 import z1 from "../components/images/zendesk-ticket-viewer/z1.png";
 import z2 from "../components/images/zendesk-ticket-viewer/z2.png";
 import rockets from "../components/images/rockets.png";
+import zendeskAw from "../components/images/zendesk-aw.png";
 
 const experienceTabContent = [
   {
@@ -76,11 +77,27 @@ const experienceTabContent = [
         duration: "June 2022-Present",
         content: (
           <div>
-            <p>
-              Working with Team Iris on the Support Suite Engineering team
-              focusing on building frontend React and backend Ruby features for
-              the Agent Workspace Activation. Learning a lot so far!
-            </p>
+            <ul>
+              <li>
+                Worked on developing frontend React and backend Ruby features on
+                the Support Suite Engineering team.
+              </li>
+              <li>
+                Implemented Zendesk's Garden UI components to build buttons,
+                alerts, and website banners in React and Typescript that added
+                functionality and commu`nication to customers' Support product
+                Agent Workspace Auto-Activation experience.
+              </li>
+              <li>
+                Collaborated cross-functionally with product managers and other
+                teams to successfully build and deploy engaging user
+                experienc`es to production
+              </li>
+              <li>
+                Set up Cypress CI with GitHub Actions to Zendesk admin center
+                GitHub repo to help streamline the team's code development.
+              </li>
+            </ul>
           </div>
         ),
       },
@@ -353,9 +370,31 @@ const projectLinkStyle = {
   borderRadius: 3,
   marginTop: 2,
   marginBottom: 2,
-}
+};
 
 const projectsContent: ProjectProps["project"][] = [
+  {
+    title: "Zendesk Agent Workspace Auto-activation Experience",
+    images: [zendeskAw],
+    text: (
+      <p>
+        Contributed several features that helped customers migrate from the old
+        version of Support to the new Agent Workspace product version.{" "}
+        <a
+          className={astyles.a}
+          href="https://drive.google.com/file/d/1pC7lJ-UxWBIvTGRGKy3UtFnslO56QMft/view?usp=sharing"
+          {...openInNewTab}
+          style={{
+            ...projectLinkStyle,
+          }}
+        >
+          View my intern presentation here.
+        </a>
+      </p>
+    ),
+    tags: ["React", "TypeScript", "Ruby", "Rails", "Cypress", "GitHub Actions"],
+    url: "https://support.zendesk.com/hc/en-us/articles/4408821259930-About-the-Zendesk-Agent-Workspace",
+  },
   {
     title: "Zendesk Ticket Viewer",
     images: [z1, z2],
@@ -369,10 +408,10 @@ const projectsContent: ProjectProps["project"][] = [
       "Full stack",
     ],
     url: "https://github.com/danielliew/zendesk-ticket-viewer",
-    year: 2022
+    year: 2022,
   },
   {
-    title: "Supersharkz.com",
+    title: "Supersharkz website",
     images: [web1, web2, web3, web4],
     text: "A professional website, swim school admin portal, instructor portal, and parent portal - all in one React app. Powered by an ExpressJS server, a socket.io realtime microservice, and MySQL database.",
     tags: [
@@ -385,7 +424,7 @@ const projectsContent: ProjectProps["project"][] = [
       "Full stack",
     ],
     url: "https://supersharkz.et.r.appspot.com/",
-    year: 2020
+    year: 2020,
   },
   {
     title: "Supersharkz Mobile App",
@@ -394,35 +433,7 @@ const projectsContent: ProjectProps["project"][] = [
     text: "A mobile app for parents to manage their students, register students in classes, and track their progress. Instructors can manage and monitor their active classes and schedules. Available on the iOS App Store and Google Play Store",
     tags: ["React Native", "Expo", "Express", "Socket.io", "Mobile App"],
     url: "https://apps.apple.com/us/app/supersharkz/id1578259870?itsct=apps_box_link&itscg=30200",
-    year: 2020
-  },
-  {
-    title: "IJM Land Calendar Booking",
-    images: [ijmWeb1],
-    text: "An online booking system allowing agencies to book time slots for visitor show unit tours to minimize social gathering during the COVID-19 pandemic",
-    tags: [
-      "React",
-      "Google Sheets",
-      "Google Calendar",
-      "Express",
-      "AppSheet",
-      "iframe",
-    ],
-    year: 2020
-  },
-  {
-    title: "IJM COVID-19 Monitoring",
-    images: [ijmApp1],
-    mobile: true,
-    text: "A user-friendly way for security guards to monitor visitors' going in and out of IJM buildings and their COVID-19 health screening information",
-    tags: [
-      "React Native",
-      "Google Sheets",
-      "Google Forms",
-      "Express",
-      "AppSheet",
-    ],
-    year: 2020
+    year: 2020,
   },
   {
     title: "Poker AI",
@@ -439,7 +450,7 @@ const projectsContent: ProjectProps["project"][] = [
           href="https://docs.google.com/document/d/1tGRpGCPNYvv40YYqBUqg1W0TrMaHfN2104wEdEXOphQ/edit?usp=sharing"
           {...openInNewTab}
           style={{
-            ...projectLinkStyle
+            ...projectLinkStyle,
           }}
         >
           Read the paper here
@@ -456,7 +467,35 @@ const projectsContent: ProjectProps["project"][] = [
       "Academic Research Paper",
     ],
     url: "https://youtu.be/xPMff4euRmI",
-    year: 2019
+    year: 2019,
+  },
+  {
+    title: "IJM Land Calendar Booking",
+    images: [ijmWeb1],
+    text: "An online booking system allowing agencies to book time slots for visitor show unit tours to minimize social gathering during the COVID-19 pandemic",
+    tags: [
+      "React",
+      "Google Sheets",
+      "Google Calendar",
+      "Express",
+      "AppSheet",
+      "iframe",
+    ],
+    year: 2020,
+  },
+  {
+    title: "IJM COVID-19 Monitoring",
+    images: [ijmApp1],
+    mobile: true,
+    text: "A user-friendly way for security guards to monitor visitors' going in and out of IJM buildings and their COVID-19 health screening information",
+    tags: [
+      "React Native",
+      "Google Sheets",
+      "Google Forms",
+      "Express",
+      "AppSheet",
+    ],
+    year: 2020,
   },
   {
     title: "DevOps Exploration",
@@ -464,7 +503,7 @@ const projectsContent: ProjectProps["project"][] = [
     text: "A research repository containing several mini-projects demonstrating Agile methodology and Devops best practices",
     tags: ["git", "Docker", "Kubernetes", "Github Actions", "Agile"],
     url: "https://github.com/danielliew/devops-test",
-    year: 2021
+    year: 2021,
   },
   {
     title: "Rockets Database",
@@ -472,7 +511,7 @@ const projectsContent: ProjectProps["project"][] = [
     text: "A database project where we modelled private spaceflight companies and their rockets. Created scripts to create the database structure, populate the database, and wrote complex test database queries to simulate a real-world situation.",
     tags: ["MySQL", "Database Schema", "Database Queries"],
     url: "https://github.com/danielliew/devops-test",
-    year: 2022
+    year: 2022,
   },
   {
     title: "Portfolio",
@@ -488,7 +527,7 @@ const projectsContent: ProjectProps["project"][] = [
       "Blog",
     ],
     url: "https://github.com/danielliew/portfolio",
-    year: 2021
+    year: 2021,
   },
   {
     title: "svg card deck",
@@ -502,7 +541,7 @@ const projectsContent: ProjectProps["project"][] = [
           className={astyles.a}
           href="https://www.etsy.com/shop/theDanielLiewStore"
           style={{
-            ...projectLinkStyle
+            ...projectLinkStyle,
           }}
           {...openInNewTab}
         >
@@ -512,9 +551,12 @@ const projectsContent: ProjectProps["project"][] = [
     ),
     tags: ["Figma", "Frontend", "Graphic Design"],
     url: "https://www.etsy.com/shop/theDanielLiewStore",
-    year: 2022
+    year: 2022,
   },
-];
+].map((item) => ({
+  ...item,
+  id: item.title.toLowerCase().replaceAll(" ", "-"),
+}));
 
 export const contentSections = [
   {

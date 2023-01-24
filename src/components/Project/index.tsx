@@ -1,4 +1,4 @@
-import React, { ReactNode, useState } from "react";
+import React, { ReactNode, useEffect, useState } from "react";
 import useResponsive from "../../hooks/useResponsive";
 import styles from "./Project.module.css";
 import astyles from "../HoverDecoration/a.module.css";
@@ -6,6 +6,7 @@ import { ProjectProps } from "./types";
 import openIcon from "../svg/open.svg";
 import openLightIcon from "../svg/open-light.svg";
 import { openInNewTab } from "../About/AboutLink";
+import { useSearchParams } from "react-router-dom";
 
 const Project: React.FC<ProjectProps> = ({ project, left }) => {
   const [pic, setPic] = useState(0);
@@ -16,8 +17,20 @@ const Project: React.FC<ProjectProps> = ({ project, left }) => {
 
   const isLg = useResponsive();
 
+  const [searchParams] = useSearchParams();
+
+  useEffect(() => {
+    const selectedProject = searchParams.get("project");
+    if (searchParams && selectedProject && selectedProject === project.id) {
+      const p = document.querySelector(`#project-${project.id}`);
+      if (p) {
+        p.scrollIntoView();
+      }
+    }
+  }, [searchParams, project.id]);
+
   return (
-    <div className={styles.container}>
+    <div className={styles.container} id={`project-${project.id}`}>
       <div
         className={
           isLg
@@ -48,16 +61,16 @@ const Project: React.FC<ProjectProps> = ({ project, left }) => {
         }
       >
         <div className={styles.title}>
-        <a
-          className={`${styles.a} ${astyles.a} ${
-            isLg ? "" : styles["a-responsive"]
-          }`}
-          href={project.url || "/"}
-          {...openInNewTab}
-        >
-          {project.title}
-        </a>
-        <small className={styles.year}>{project.year}</small>
+          <a
+            className={`${styles.a} ${astyles.a} ${
+              isLg ? "" : styles["a-responsive"]
+            }`}
+            href={project.url || "/"}
+            {...openInNewTab}
+          >
+            {project.title}
+          </a>
+          <small className={styles.year}>{project.year}</small>
         </div>
         <div className={isLg ? styles.projectText : ""}>
           {typeof project.text === "string" ? (
