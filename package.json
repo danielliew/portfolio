@@ -14,6 +14,7 @@
     "@types/react-dom": "^17.0.10",
     "firebase": "^9.3.0",
     "history": "^5.1.0",
+    "liew-i-library": "^1.1.74",
     "marked": "^4.0.17",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",

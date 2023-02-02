@@ -66,6 +66,8 @@ import z1 from "../components/images/zendesk-ticket-viewer/z1.png";
 import z2 from "../components/images/zendesk-ticket-viewer/z2.png";
 import rockets from "../components/images/rockets.png";
 import zendeskAw from "../components/images/zendesk-aw.png";
+import uiLibrary from "../components/images/ui-library.png";
+import { Button, Calendar, Dropdown, TextInput } from "liew-i-library";
 
 const experienceTabContent = [
   {
@@ -373,6 +375,49 @@ const projectLinkStyle = {
 };
 
 const projectsContent: ProjectProps["project"][] = [
+  {
+    title: "liew-i-library",
+    images: [uiLibrary],
+    text: (
+      <div>
+        <p>
+          I wrote a completely customized react component library built with
+          pure Typescript and CSS for the ultimate user experience.{" "}
+          <a
+            className={astyles.a}
+            href="https://www.npmjs.com/package/liew-i-library"
+            {...openInNewTab}
+            style={{
+              ...projectLinkStyle,
+            }}
+          >
+            Check out
+          </a>{" "}
+          the package on npm.
+          <br />
+        </p>
+        <Button type="solid">This is a liew-i-library button</Button>
+        <hr />
+        <Button>This is another liew-i-library button</Button>
+        <hr />
+        <Dropdown
+          anchor="This is a dropdown"
+          items={["Item 1", "Item 2", "Item 3"]}
+        />
+        <hr />
+        <TextInput
+          placeholder="Try me"
+          label="This is a liew-i-library textinput"
+          extra="Very nice text input"
+        />
+        <hr />
+        <Calendar />
+      </div>
+    ),
+    tags: ["React", "npm", "TypeScript", "vitejs"],
+    url: "https://youtu.be/xPMff4euRmI",
+    year: 2023,
+  },
   {
     title: "Zendesk Agent Workspace Auto-activation Experience",
     images: [zendeskAw],
