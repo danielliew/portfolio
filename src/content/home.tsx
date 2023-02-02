@@ -396,26 +396,34 @@ const projectsContent: ProjectProps["project"][] = [
           the package on npm.
           <br />
         </p>
-        <Button type="solid">This is a liew-i-library button</Button>
-        <hr />
-        <Button>This is another liew-i-library button</Button>
-        <hr />
-        <Dropdown
-          anchor="This is a dropdown"
-          items={["Item 1", "Item 2", "Item 3"]}
-        />
-        <hr />
-        <TextInput
-          placeholder="Try me"
-          label="This is a liew-i-library textinput"
-          extra="Very nice text input"
-        />
-        <hr />
-        <Calendar />
+        <div
+          style={{
+            backgroundColor: "white",
+            borderRadius: 20,
+            padding: `4px 0px`,
+          }}
+        >
+          <Button type="solid">This is a liew-i-library button</Button>
+          <hr />
+          <Button>This is another liew-i-library button</Button>
+          <hr />
+          <Dropdown
+            anchor="This is a dropdown"
+            items={["Item 1", "Item 2", "Item 3"]}
+          />
+          <hr />
+          <TextInput
+            placeholder="Try me"
+            label="This is a liew-i-library textinput"
+            extra="Very nice text input"
+          />
+          <hr />
+          <Calendar />
+        </div>
       </div>
     ),
-    tags: ["React", "npm", "TypeScript", "vitejs"],
-    url: "https://youtu.be/xPMff4euRmI",
+    tags: ["React", "npm", "TypeScript", "CSS", "vitejs"],
+    url: "https://www.npmjs.com/package/liew-i-library",
     year: 2023,
   },
   {
@@ -439,6 +447,7 @@ const projectsContent: ProjectProps["project"][] = [
     ),
     tags: ["React", "TypeScript", "Ruby", "Rails", "Cypress", "GitHub Actions"],
     url: "https://support.zendesk.com/hc/en-us/articles/4408821259930-About-the-Zendesk-Agent-Workspace",
+    year: 2022,
   },
   {
     title: "Zendesk Ticket Viewer",
@@ -456,6 +465,22 @@ const projectsContent: ProjectProps["project"][] = [
     year: 2022,
   },
   {
+    title: "Rockets Database",
+    images: [rockets],
+    text: "A database project where we modelled private spaceflight companies and their rockets. Created scripts to create the database structure, populate the database, and wrote complex test database queries to simulate a real-world situation.",
+    tags: ["MySQL", "Database Schema", "Database Queries"],
+    url: "https://github.com/danielliew/devops-test",
+    year: 2022,
+  },
+  {
+    title: "DevOps Exploration",
+    images: [devopsGh1],
+    text: "A research repository containing several mini-projects demonstrating Agile methodology and Devops best practices",
+    tags: ["git", "Docker", "Kubernetes", "Github Actions", "Agile"],
+    url: "https://github.com/danielliew/devops-test",
+    year: 2021,
+  },
+  {
     title: "Supersharkz website",
     images: [web1, web2, web3, web4],
     text: "A professional website, swim school admin portal, instructor portal, and parent portal - all in one React app. Powered by an ExpressJS server, a socket.io realtime microservice, and MySQL database.",
@@ -469,6 +494,74 @@ const projectsContent: ProjectProps["project"][] = [
       "Full stack",
     ],
     url: "https://supersharkz.et.r.appspot.com/",
+    year: 2020,
+  },
+  {
+    title: "svg card deck",
+    images: [cardDeck],
+    text: (
+      <p>
+        I was unsatisfied with online SVG/PNG card decks so I made my own on
+        Figma. Pretty happy with how this turned out so if you ever need a
+        digital card deck, get it from{" "}
+        <a
+          className={astyles.a}
+          href="https://www.etsy.com/shop/theDanielLiewStore"
+          style={{
+            ...projectLinkStyle,
+          }}
+          {...openInNewTab}
+        >
+          my store on Etsy.
+        </a>
+      </p>
+    ),
+    tags: ["Figma", "Frontend", "Graphic Design"],
+    url: "https://www.etsy.com/shop/theDanielLiewStore",
+    year: 2022,
+  },
+  {
+    title: "Portfolio",
+    images: [dliew1Pic, dliew2Pic],
+    text: "The website you're currently on. A collection of my work, experiences and stuff.",
+    tags: [
+      "React",
+      "Google App Engine",
+      "TypeScript",
+      "CSS",
+      "UI/UX design",
+      "Portfolio",
+      "Blog",
+    ],
+    url: "https://github.com/danielliew/portfolio",
+    year: 2021,
+  },
+  {
+    title: "IJM Land Calendar Booking",
+    images: [ijmWeb1],
+    text: "An online booking system allowing agencies to book time slots for visitor show unit tours to minimize social gathering during the COVID-19 pandemic",
+    tags: [
+      "React",
+      "Google Sheets",
+      "Google Calendar",
+      "Express",
+      "AppSheet",
+      "iframe",
+    ],
+    year: 2020,
+  },
+  {
+    title: "IJM COVID-19 Monitoring",
+    images: [ijmApp1],
+    mobile: true,
+    text: "A user-friendly way for security guards to monitor visitors' going in and out of IJM buildings and their COVID-19 health screening information",
+    tags: [
+      "React Native",
+      "Google Sheets",
+      "Google Forms",
+      "Express",
+      "AppSheet",
+    ],
     year: 2020,
   },
   {
@@ -513,90 +606,6 @@ const projectsContent: ProjectProps["project"][] = [
     ],
     url: "https://youtu.be/xPMff4euRmI",
     year: 2019,
-  },
-  {
-    title: "IJM Land Calendar Booking",
-    images: [ijmWeb1],
-    text: "An online booking system allowing agencies to book time slots for visitor show unit tours to minimize social gathering during the COVID-19 pandemic",
-    tags: [
-      "React",
-      "Google Sheets",
-      "Google Calendar",
-      "Express",
-      "AppSheet",
-      "iframe",
-    ],
-    year: 2020,
-  },
-  {
-    title: "IJM COVID-19 Monitoring",
-    images: [ijmApp1],
-    mobile: true,
-    text: "A user-friendly way for security guards to monitor visitors' going in and out of IJM buildings and their COVID-19 health screening information",
-    tags: [
-      "React Native",
-      "Google Sheets",
-      "Google Forms",
-      "Express",
-      "AppSheet",
-    ],
-    year: 2020,
-  },
-  {
-    title: "DevOps Exploration",
-    images: [devopsGh1],
-    text: "A research repository containing several mini-projects demonstrating Agile methodology and Devops best practices",
-    tags: ["git", "Docker", "Kubernetes", "Github Actions", "Agile"],
-    url: "https://github.com/danielliew/devops-test",
-    year: 2021,
-  },
-  {
-    title: "Rockets Database",
-    images: [rockets],
-    text: "A database project where we modelled private spaceflight companies and their rockets. Created scripts to create the database structure, populate the database, and wrote complex test database queries to simulate a real-world situation.",
-    tags: ["MySQL", "Database Schema", "Database Queries"],
-    url: "https://github.com/danielliew/devops-test",
-    year: 2022,
-  },
-  {
-    title: "Portfolio",
-    images: [dliew1Pic, dliew2Pic],
-    text: "The website you're currently on. A collection of my work, experiences and stuff.",
-    tags: [
-      "React",
-      "Google App Engine",
-      "TypeScript",
-      "CSS",
-      "UI/UX design",
-      "Portfolio",
-      "Blog",
-    ],
-    url: "https://github.com/danielliew/portfolio",
-    year: 2021,
-  },
-  {
-    title: "svg card deck",
-    images: [cardDeck],
-    text: (
-      <p>
-        I was unsatisfied with online SVG/PNG card decks so I made my own on
-        Figma. Pretty happy with how this turned out so if you ever need a
-        digital card deck, get it from{" "}
-        <a
-          className={astyles.a}
-          href="https://www.etsy.com/shop/theDanielLiewStore"
-          style={{
-            ...projectLinkStyle,
-          }}
-          {...openInNewTab}
-        >
-          my store on Etsy.
-        </a>
-      </p>
-    ),
-    tags: ["Figma", "Frontend", "Graphic Design"],
-    url: "https://www.etsy.com/shop/theDanielLiewStore",
-    year: 2022,
   },
 ].map((item) => ({
   ...item,

@@ -46,6 +46,7 @@
 .title {
   margin-bottom: 20px;
   display: block;
+  max-width: 80%;
 }
 
 .year {
