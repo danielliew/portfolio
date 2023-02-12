@@ -68,6 +68,7 @@ import rockets from "../components/images/rockets.png";
 import zendeskAw from "../components/images/zendesk-aw.png";
 import uiLibrary from "../components/images/ui-library.png";
 import { Button, Calendar, Dropdown, TextInput } from "liew-i-library";
+import { Link } from "react-router-dom";
 
 const experienceTabContent = [
   {
@@ -393,7 +394,18 @@ const projectsContent: ProjectProps["project"][] = [
           >
             Check out
           </a>{" "}
-          the package on npm.
+          the package on npm.{" "}
+          <Link
+            className={astyles.a}
+            to="/demo"
+            {...openInNewTab}
+            style={{
+              ...projectLinkStyle,
+            }}
+          >
+            Click here
+          </Link>{" "}
+          for a full demo of the library
           <br />
         </p>
         <div
@@ -404,8 +416,6 @@ const projectsContent: ProjectProps["project"][] = [
           }}
         >
           <Button type="solid">This is a liew-i-library button</Button>
-          <hr />
-          <Button>This is another liew-i-library button</Button>
           <hr />
           <Dropdown
             anchor="This is a dropdown"
@@ -418,7 +428,20 @@ const projectsContent: ProjectProps["project"][] = [
             extra="Very nice text input"
           />
           <hr />
-          <Calendar />
+          <Calendar onDateHover={() => "Display some text here if u want"} />
+          <hr />
+          Like what you see?{" "}
+          <Link
+            className={astyles.a}
+            to="/demo"
+            {...openInNewTab}
+            style={{
+              ...projectLinkStyle,
+            }}
+          >
+            Click here
+          </Link>{" "}
+          for a full demo of the library
         </div>
       </div>
     ),

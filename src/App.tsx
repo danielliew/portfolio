@@ -5,6 +5,7 @@ import PageLoader from "./components/PageLoader";
 import Blog from "./pages/Blog";
 import BlogPage from "./pages/BlogPage";
 import NotFound from "./pages/NotFound";
+import Demo from "./pages/UiLibraryDemo";
 
 const Home = lazy(() => import("./pages/Home"));
 
@@ -22,7 +23,7 @@ const App: React.FC = () => {
           }
         />
         <Route
-          path="/wtf"
+          path="/huh"
           element={
             <Suspense fallback={<PageLoader />}>
               <NotFound />
@@ -46,9 +47,17 @@ const App: React.FC = () => {
           }
         />
         <Route
+          path="/demo"
+          element={
+            <Suspense fallback={<PageLoader />}>
+              <Demo />
+            </Suspense>
+          }
+        />
+        <Route
           path="/*"
           element={
-            <Navigate to="/wtf" />
+            <Navigate to="/huh" />
           }
         />
       </Routes>

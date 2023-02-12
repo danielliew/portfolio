@@ -59,7 +59,7 @@ const MainBlog = ({
   } catch {
       error = true;
     }
-    if (error) navigate("/wtf");
+    if (error) navigate("/huh");
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [blog_id]);
 
