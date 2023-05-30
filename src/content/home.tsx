@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import astyles from "../components/HoverDecoration/a.module.css";
 
 import { openInNewTab } from "../components/About/AboutLink";
@@ -68,7 +70,9 @@ import rockets from "../components/images/rockets.png";
 import zendeskAw from "../components/images/zendesk-aw.png";
 import uiLibrary from "../components/images/ui-library.png";
 import { Button, Calendar, Dropdown, TextInput } from "liew-i-library";
-import { Link } from "react-router-dom";
+import foxday1 from "../components/images/foxday/prediction.png";
+import foxday2 from "../components/images/foxday/profile.png";
+import foxday3 from "../components/images/foxday/social.png";
 
 const experienceTabContent = [
   {
@@ -376,6 +380,50 @@ const projectLinkStyle = {
 };
 
 const projectsContent: ProjectProps["project"][] = [
+  {
+    title: "foxday.io",
+    images: [
+      foxday1,
+      foxday2,
+      foxday3
+    ],
+    text: (
+      <div>
+        <p>
+          My CS senior capstone project. Built around the idea of{" "}
+          <a
+            className={astyles.a}
+            href="https://www.rollins.edu/fox-day/"
+            style={{
+              ...projectLinkStyle,
+            }}
+            {...openInNewTab}
+          >
+            Fox Day,
+          </a>{" "}
+          a Rollins College tradition where the president of the college
+          announces a surprise day off for students and faculty every spring. We
+          used machine learning to predict the date of Fox Day and created a
+          social media platform for community building within the student body
+          to interact with each other regarding all things Fox Day.
+        </p>
+      </div>
+    ),
+    tags: [
+      "React",
+      "Redux",
+      "TypeScript",
+      "Django",
+      "TensorFlow",
+      "HTML/CSS",
+      "Python",
+      "MongoDB",
+      "Google Cloud App Engine/Cloud Run",
+      "Docker",
+    ],
+    url: "https://foxday.io",
+    year: 2023,
+  },
   {
     title: "liew-i-library",
     images: [uiLibrary],

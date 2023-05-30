@@ -1,4 +1,4 @@
-import React, { ReactNode, useEffect, useState } from "react";
+import React, { ReactNode, useCallback, useEffect, useState } from "react";
 import useResponsive from "../../hooks/useResponsive";
 import styles from "./Project.module.css";
 import astyles from "../HoverDecoration/a.module.css";
@@ -10,10 +10,14 @@ import { useSearchParams } from "react-router-dom";
 
 const Project: React.FC<ProjectProps> = ({ project, left }) => {
   const [pic, setPic] = useState(0);
-  const onBack = () =>
+
+  const onBack = useCallback(() => {
     setPic((p) => (p === 0 ? project.images.length - 1 : p - 1));
-  const onNext = () =>
+  }, [project.images.length]);
+
+  const onNext = useCallback(() => {
     setPic((p) => (p === project.images.length - 1 ? 0 : p + 1));
+  }, [project.images.length]);
 
   const isLg = useResponsive();
 
@@ -28,6 +32,16 @@ const Project: React.FC<ProjectProps> = ({ project, left }) => {
       }
     }
   }, [searchParams, project.id]);
+
+  // automatically switch images every 5 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (project.images.length > 1) {
+        onNext();
+      }
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [project.images.length, onNext]);
 
   return (
     <div className={styles.container} id={`project-${project.id}`}>
