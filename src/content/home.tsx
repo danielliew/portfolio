@@ -382,11 +382,7 @@ const projectLinkStyle = {
 const projectsContent: ProjectProps["project"][] = [
   {
     title: "foxday.io",
-    images: [
-      foxday1,
-      foxday2,
-      foxday3
-    ],
+    images: [foxday1, foxday2, foxday3],
     text: (
       <div>
         <p>
@@ -680,7 +676,7 @@ const projectsContent: ProjectProps["project"][] = [
   },
 ].map((item) => ({
   ...item,
-  id: item.title.toLowerCase().replaceAll(" ", "-"),
+  id: item.title.toLowerCase().replaceAll(" ", "-").replaceAll(".", "-"),
 }));
 
 export const contentSections = [
