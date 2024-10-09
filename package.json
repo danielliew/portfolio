@@ -1,17 +1,8 @@
 {
   "name": "portfolio",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
-    "@react-spring/types": "^9.7.2",
-    "@testing-library/jest-dom": "^5.16.5",
-    "@testing-library/react": "^14.0.0",
-    "@testing-library/user-event": "^14.4.3",
-    "@types/jest": "^29.5.1",
-    "@types/marked": "^5.0.0",
-    "@types/node": "^20.2.5",
-    "@types/react": "^18.2.7",
-    "@types/react-dom": "^18.2.4",
     "firebase": "^9.22.1",
     "history": "^5.3.0",
     "liew-i-library": "^1.2.0",
@@ -23,6 +14,17 @@
     "react-spring": "^9.7.1",
     "typescript": "^4",
     "web-vitals": "^3.3.2"
+  },
+  "devDependencies": {
+    "@react-spring/types": "^9.7.2",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^14.0.0",
+    "@testing-library/user-event": "^14.4.3",
+    "@types/jest": "^29.5.1",
+    "@types/marked": "^5.0.0",
+    "@types/node": "^20.2.5",
+    "@types/react": "^18.2.7",
+    "@types/react-dom": "^18.2.4"
   },
   "scripts": {
     "start": "react-scripts start",
